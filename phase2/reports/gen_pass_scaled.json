@@ -1,0 +1,194 @@
+{
+  "n_questions": 120,
+  "n_books": 227,
+  "n_chunks": 88264,
+  "per_type": {
+    "known_item": {
+      "dense": 0.7609108127976215,
+      "bm25": 0.7930441225787631,
+      "hybrid": 0.8858825641311117,
+      "meta": 0.9136885905753993
+    },
+    "topical": {
+      "dense": 0.5069280783556289,
+      "bm25": 0.2694026163130309,
+      "hybrid": 0.43993990384914033,
+      "meta": 0.7363001972389016
+    },
+    "bib_fact": {
+      "dense": 0.9400975409698581,
+      "bm25": 0.7959860542900027,
+      "hybrid": 0.9832871106456049,
+      "meta": 0.9135561442593361
+    }
+  },
+  "overall": {
+    "dense": 0.771,
+    "bm25": 0.655,
+    "hybrid": 0.809,
+    "meta": 0.866
+  },
+  "permutation": {
+    "known_item": 0.551224387806097,
+    "topical": 0.0029985007496251873,
+    "bib_fact": 0.06446776611694154
+  },
+  "generation": {
+    "meta": {
+      "n": 120,
+      "with_citations": 117,
+      "citations_verified": 114,
+      "judge_faithful": 99,
+      "judge_unfaithful": 12,
+      "judge_errors": 9,
+      "n_judged": 111,
+      "rate_citations": 0.975,
+      "rate_verified": 0.95,
+      "rate_faithful": 0.892,
+      "examples": [
+        {
+          "type": "bib_fact",
+          "question": "Can you tell me who wrote 'A Room with a View'?",
+          "answer": "'A Room with a View' was written by E. M. Forster (Edward Morgan Forster), as listed in the catalog record [REC:/works/OL88813W].",
+          "cited_recs": [
+            "/works/OL88813W"
+          ],
+          "cited_chunks": [],
+          "all_citations_verified": true,
+          "judge_faithful": null
+        },
+        {
+          "type": "known_item",
+          "question": "Can you help me locate a book called 'Journey to a woman' in your collection?",
+          "answer": "Yes, I can help you locate that book. The catalog shows a record for **'Journey to a woman'** by Ann Bannon, classified under Lesbians -- Fiction with a Dewey Decimal number of 813.54 [REC:OL5746622W]. Additionally, there is a full-text passage from the Project Gutenberg eBook of *Journey to a woman* that confirms its availability in digital form [CHUNK:77871-0]. Please note that the catalog recor",
+          "cited_recs": [
+            "OL5746622W"
+          ],
+          "cited_chunks": [
+            "77871-0"
+          ],
+          "all_citations_verified": true,
+          "judge_faithful": true
+        },
+        {
+          "type": "bib_fact",
+          "question": "Can you tell me the Dewey Decimal call number for 'A Room with a View'?",
+          "answer": "Based on the catalog records provided, the Dewey Decimal call numbers for \"A Room with a View\" are 823.91203, 891.733, 823.912, and 823.91 [REC:OL88813W].",
+          "cited_recs": [
+            "OL88813W"
+          ],
+          "cited_chunks": [],
+          "all_citations_verified": true,
+          "judge_faithful": null
+        },
+        {
+          "type": "topical",
+          "question": "Do you have any books in this library that are English detective or mystery fiction?",
+          "answer": "Based on the catalog records provided, I can identify two books that are explicitly labeled as detective stories:\n\n- **The porcelain mask : A detective story** by John Jay Chichester [REC:OL7764218W]\n- **The trouble at Pinelands : A detective story** by Ernest M. Poate [REC:OL213135W]\n\nHowever, the question asks specifically for **English** detective or mystery fiction. Neither of these two record",
+          "cited_recs": [
+            "OL213135W",
+            "OL7764218W"
+          ],
+          "cited_chunks": [],
+          "all_citations_verified": true,
+          "judge_faithful": true
+        },
+        {
+          "type": "topical",
+          "question": "I'm looking for a children's storybook in this library that deals with moral lessons or how to live a good life.",
+          "answer": "Based on the provided records, the closest match is **\"The Carpenter's Daughter\"** by Susan Warner and Anna Bartlett Warner. Its subject headings explicitly include \"Christian life -- Juvenile fiction\" and \"Daughters -- Juvenile fiction,\" which directly align with moral lessons and living a good life [REC:OL24464807W]. \n\nThe other catalog records do not fit this request: \"Children's books and read",
+          "cited_recs": [
+            "OL24419407W",
+            "OL24464807W",
+            "OL40148737W, REC:OL1130038W",
+            "OL6609763W"
+          ],
+          "cited_chunks": [
+            "71774-4"
+          ],
+          "all_citations_verified": false,
+          "judge_faithful": true
+        }
+      ]
+    },
+    "hybrid": {
+      "n": 120,
+      "with_citations": 91,
+      "citations_verified": 88,
+      "judge_faithful": 111,
+      "judge_unfaithful": 5,
+      "judge_errors": 4,
+      "n_judged": 116,
+      "rate_citations": 0.758,
+      "rate_verified": 0.733,
+      "rate_faithful": 0.957,
+      "examples": [
+        {
+          "type": "bib_fact",
+          "question": "Can you tell me who wrote 'A Room with a View'?",
+          "answer": "Based on the provided full-text passages, the author of *A Room with a View* is not explicitly named. The first passage [CHUNK:2641-0] identifies the text as a Project Gutenberg eBook of the work but does not state the author. The other passages [CHUNK:2641-134], [CHUNK:19412-328], and [CHUNK:40307-407] are excerpts from the book's content and do not mention the author either. Therefore, the sourc",
+          "cited_recs": [],
+          "cited_chunks": [
+            "19412-328",
+            "2641-0",
+            "2641-134",
+            "40307-407"
+          ],
+          "all_citations_verified": true,
+          "judge_faithful": true
+        },
+        {
+          "type": "known_item",
+          "question": "Can you help me locate a book called 'Journey to a woman' in your collection?",
+          "answer": "Based on the sources provided, I cannot confirm that a book titled *Journey to a woman* is in your collection. The catalog records returned no results [REC:]. The full-text passages include a Project Gutenberg eBook titled *Journey to a woman* [CHUNK:77871-0], but this is a digital text, not a catalog record for a physical or library-held copy. Other passages reference different works (e.g., *I am",
+          "cited_recs": [],
+          "cited_chunks": [
+            "76178-0",
+            "77871-0",
+            "9334-678, CHUNK:52882-19"
+          ],
+          "all_citations_verified": false,
+          "judge_faithful": true
+        },
+        {
+          "type": "bib_fact",
+          "question": "Can you tell me the Dewey Decimal call number for 'A Room with a View'?",
+          "answer": "The sources provided do not contain a Dewey Decimal call number for *A Room with a View*. The catalog records returned no results, and the full-text passages only include the Project Gutenberg eBook text of the novel itself, along with unrelated passages from other works [CHUNK:2641-0] [CHUNK:53910-0]. No classification data is present.",
+          "cited_recs": [],
+          "cited_chunks": [
+            "2641-0",
+            "53910-0"
+          ],
+          "all_citations_verified": true,
+          "judge_faithful": true
+        },
+        {
+          "type": "topical",
+          "question": "Do you have any books in this library that are English detective or mystery fiction?",
+          "answer": "Based on the provided sources, I cannot confirm that the library has any books that are specifically English detective or mystery fiction. The catalog records returned no results, and the full-text passages do not mention any titles or authors in that genre. The passages discuss unrelated topics such as Cornish stories, library catalogs, and book suggestions for men and women, but none identify de",
+          "cited_recs": [],
+          "cited_chunks": [
+            "24767-286",
+            "53416-27",
+            "71774-201",
+            "77022-0"
+          ],
+          "all_citations_verified": true,
+          "judge_faithful": true
+        },
+        {
+          "type": "topical",
+          "question": "I'm looking for a children's storybook in this library that deals with moral lessons or how to live a good life.",
+          "answer": "Based on the provided sources, I cannot identify a specific children's storybook title in this library that deals with moral lessons or how to live a good life. The catalog records are empty, and the full-text passages discuss general principles about children's literature and moral habits, but they do not list or describe any actual storybook titles available in the library [CHUNK:71774-4][CHUNK:",
+          "cited_recs": [],
+          "cited_chunks": [
+            "71774-177",
+            "71774-4"
+          ],
+          "all_citations_verified": true,
+          "judge_faithful": true
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "total": 8690,
+  "by_type": {
+    "known_item": 2718,
+    "topical": 2718,
+    "bib_fact": 3254
+  },
+  "invalid": 0,
+  "books_used": 1316
+}

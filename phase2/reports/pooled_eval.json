@@ -1,0 +1,43 @@
+{
+  "dense": {
+    "graded_ndcg10": 0.521,
+    "single_gold_ndcg10": 0.519
+  },
+  "bm25": {
+    "graded_ndcg10": 0.274,
+    "single_gold_ndcg10": 0.268
+  },
+  "hybrid": {
+    "graded_ndcg10": 0.424,
+    "single_gold_ndcg10": 0.451
+  },
+  "meta": {
+    "graded_ndcg10": 0.67,
+    "single_gold_ndcg10": 0.643
+  },
+  "loop_none": {
+    "graded_ndcg10": 0.314,
+    "single_gold_ndcg10": 0.283
+  },
+  "loop_llm": {
+    "graded_ndcg10": 0.649,
+    "single_gold_ndcg10": 0.625
+  },
+  "loop_gold": {
+    "graded_ndcg10": 0.67,
+    "single_gold_ndcg10": 0.643
+  },
+  "sparsity_base100": {
+    "graded_ndcg10": 0.67,
+    "single_gold_ndcg10": 0.643
+  },
+  "sparsity_enr100": {
+    "graded_ndcg10": 0.746,
+    "single_gold_ndcg10": 0.801
+  },
+  "_meta": {
+    "n_queries": 103,
+    "mean_relevant_per_query": 2.38,
+    "queries_with_multiple_relevant": 39
+  }
+}

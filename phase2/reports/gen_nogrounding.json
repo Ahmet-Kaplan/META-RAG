@@ -1,0 +1,81 @@
+{
+  "n_questions": 120,
+  "n_books": 227,
+  "n_chunks": 88264,
+  "per_type": {
+    "known_item": {
+      "meta": 0.9136885905753993
+    },
+    "topical": {
+      "meta": 0.7363001972389016
+    },
+    "bib_fact": {
+      "meta": 0.9135561442593361
+    }
+  },
+  "overall": {
+    "meta": 0.866
+  },
+  "permutation": {},
+  "generation": {
+    "meta": {
+      "n": 120,
+      "with_citations": 0,
+      "citations_verified": 0,
+      "judge_faithful": 75,
+      "judge_unfaithful": 35,
+      "judge_errors": 10,
+      "n_judged": 110,
+      "rate_citations": 0.0,
+      "rate_verified": 0.0,
+      "rate_faithful": 0.682,
+      "examples": [
+        {
+          "type": "bib_fact",
+          "question": "Can you tell me who wrote 'A Room with a View'?",
+          "answer": "'A Room with a View' was written by E. M. Forster (Edward Morgan Forster).",
+          "cited_recs": [],
+          "cited_chunks": [],
+          "all_citations_verified": false,
+          "judge_faithful": true
+        },
+        {
+          "type": "known_item",
+          "question": "Can you help me locate a book called 'Journey to a woman' in your collection?",
+          "answer": "Yes, I can help you with that! We do have **Journey to a woman** by Ann Bannon in our collection. It's cataloged as a work of fiction, specifically under the subject of \"Lesbians -- Fiction,\" and it's classified under the Dewey Decimal number 813.54.\n\nI also see that we have a related title by the same author, **I am a woman**, which is also in the collection. If you're interested in Ann Bannon's ",
+          "cited_recs": [],
+          "cited_chunks": [],
+          "all_citations_verified": false,
+          "judge_faithful": true
+        },
+        {
+          "type": "bib_fact",
+          "question": "Can you tell me the Dewey Decimal call number for 'A Room with a View'?",
+          "answer": "Based on the information provided, the Dewey Decimal call numbers for *A Room with a View* by E. M. Forster are:\n\n**823.91203**, **891.733**, **823.912**, and **823.91**\n\nThe most commonly used classification for this novel would likely be **823.912** (English fiction of the early 20th century), but any of the listed numbers could appear in a library catalog.",
+          "cited_recs": [],
+          "cited_chunks": [],
+          "all_citations_verified": false,
+          "judge_faithful": false
+        },
+        {
+          "type": "topical",
+          "question": "Do you have any books in this library that are English detective or mystery fiction?",
+          "answer": "Based on the catalog records provided, I can see a few titles that might fit your interest in English detective or mystery fiction:\n\n- **The porcelain mask: A detective story** by John Jay Chichester \u2014 This is explicitly labeled a detective story, though it's set in New York State.\n- **The trouble at Pinelands: A detective story** by Ernest M. Poate \u2014 Also explicitly a detective story, set in Nort",
+          "cited_recs": [],
+          "cited_chunks": [],
+          "all_citations_verified": false,
+          "judge_faithful": true
+        },
+        {
+          "type": "topical",
+          "question": "I'm looking for a children's storybook in this library that deals with moral lessons or how to live a good life.",
+          "answer": "Based on the records available, I can point you to **\"The Carpenter's Daughter\"** by Susan Warner and Anna Bartlett Warner. Its subject headings include \"Christian life -- Juvenile fiction,\" which directly relates to moral lessons and living a good life. It appears to be a story about a child dealing with poverty and a parent's alcoholism, framed within Christian moral teaching.\n\nIf you're open to",
+          "cited_recs": [],
+          "cited_chunks": [],
+          "all_citations_verified": false,
+          "judge_faithful": true
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "n_questions": 300,
+  "n_books": 227,
+  "n_chunks": 88264,
+  "per_type": {
+    "known_item": {
+      "meta": 0.9210087671332066
+    },
+    "topical": {
+      "meta": 0.3990719931629844
+    },
+    "bib_fact": {
+      "meta": 0.9356824358021418
+    }
+  },
+  "overall": {
+    "meta": 0.748
+  },
+  "permutation": {},
+  "generation": {}
+}

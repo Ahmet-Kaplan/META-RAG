@@ -1,0 +1,107 @@
+{
+  "n_records": 1241,
+  "n_with_gold": 931,
+  "n_questions": 300,
+  "seed": 23,
+  "levels": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "baseline": {
+    "0.00": {
+      "overall": 0.632,
+      "per_type": {
+        "known_item": 0.7753949016102738,
+        "topical": 0.2219955321987552,
+        "bib_fact": 0.8544868573830061
+      },
+      "records_with_subjects": 0
+    },
+    "0.25": {
+      "overall": 0.678,
+      "per_type": {
+        "known_item": 0.8125104867113124,
+        "topical": 0.3181251915186601,
+        "bib_fact": 0.8669012694780786
+      },
+      "records_with_subjects": 238
+    },
+    "0.50": {
+      "overall": 0.72,
+      "per_type": {
+        "known_item": 0.8125389584307073,
+        "topical": 0.43909164325474975,
+        "bib_fact": 0.8780832618252475
+      },
+      "records_with_subjects": 476
+    },
+    "0.75": {
+      "overall": 0.75,
+      "per_type": {
+        "known_item": 0.8146548899885029,
+        "topical": 0.5129781271816347,
+        "bib_fact": 0.893361019771419
+      },
+      "records_with_subjects": 706
+    },
+    "1.00": {
+      "overall": 0.755,
+      "per_type": {
+        "known_item": 0.8171391900985582,
+        "topical": 0.5461762532400828,
+        "bib_fact": 0.8780665686359191
+      },
+      "records_with_subjects": 931
+    }
+  },
+  "enriched": {
+    "0.00": {
+      "overall": 0.699,
+      "per_type": {
+        "known_item": 0.7586276609568695,
+        "topical": 0.40564226060303665,
+        "bib_fact": 0.8948730934508965
+      },
+      "records_with_subjects": 1241
+    },
+    "0.25": {
+      "overall": 0.723,
+      "per_type": {
+        "known_item": 0.762532939780246,
+        "topical": 0.47642700126419535,
+        "bib_fact": 0.8946474324678191
+      },
+      "records_with_subjects": 1241
+    },
+    "0.50": {
+      "overall": 0.756,
+      "per_type": {
+        "known_item": 0.7793201000739053,
+        "topical": 0.5462583541886213,
+        "bib_fact": 0.9104580513480063
+      },
+      "records_with_subjects": 1241
+    },
+    "0.75": {
+      "overall": 0.761,
+      "per_type": {
+        "known_item": 0.7782912959699101,
+        "topical": 0.5805748027105376,
+        "bib_fact": 0.8976648180242216
+      },
+      "records_with_subjects": 1241
+    },
+    "1.00": {
+      "overall": 0.753,
+      "per_type": {
+        "known_item": 0.7760363591941534,
+        "topical": 0.5577068374492596,
+        "bib_fact": 0.8964564008944917
+      },
+      "records_with_subjects": 1241
+    }
+  }
+}

@@ -1,0 +1,350 @@
+{
+  "levels": [
+    0.0,
+    0.125,
+    0.25,
+    0.375,
+    0.5,
+    0.625,
+    0.75,
+    0.875,
+    1.0
+  ],
+  "eps": 0.02,
+  "seed": 23,
+  "fit": {
+    "n_records": 227,
+    "n_questions": 1076,
+    "curve": [
+      {
+        "mask": 0.0,
+        "completeness": 0.0,
+        "reachability": 1.0,
+        "n_covered": 0,
+        "base": 0.3133,
+        "enriched": 0.6561,
+        "gain": 0.3428
+      },
+      {
+        "mask": 0.125,
+        "completeness": 0.0881057268722467,
+        "reachability": 1.0,
+        "n_covered": 20,
+        "base": 0.3498,
+        "enriched": 0.6676,
+        "gain": 0.3178
+      },
+      {
+        "mask": 0.25,
+        "completeness": 0.17180616740088106,
+        "reachability": 1.0,
+        "n_covered": 39,
+        "base": 0.407,
+        "enriched": 0.6826,
+        "gain": 0.2756
+      },
+      {
+        "mask": 0.375,
+        "completeness": 0.2555066079295154,
+        "reachability": 1.0,
+        "n_covered": 58,
+        "base": 0.4438,
+        "enriched": 0.7248,
+        "gain": 0.2809
+      },
+      {
+        "mask": 0.5,
+        "completeness": 0.3436123348017621,
+        "reachability": 1.0,
+        "n_covered": 78,
+        "base": 0.4892,
+        "enriched": 0.7397,
+        "gain": 0.2506
+      },
+      {
+        "mask": 0.625,
+        "completeness": 0.43171806167400884,
+        "reachability": 1.0,
+        "n_covered": 98,
+        "base": 0.5464,
+        "enriched": 0.7603,
+        "gain": 0.2139
+      },
+      {
+        "mask": 0.75,
+        "completeness": 0.5154185022026432,
+        "reachability": 1.0,
+        "n_covered": 117,
+        "base": 0.5941,
+        "enriched": 0.783,
+        "gain": 0.1889
+      },
+      {
+        "mask": 0.875,
+        "completeness": 0.5991189427312775,
+        "reachability": 1.0,
+        "n_covered": 136,
+        "base": 0.6461,
+        "enriched": 0.7906,
+        "gain": 0.1445
+      },
+      {
+        "mask": 1.0,
+        "completeness": 0.6872246696035242,
+        "reachability": 1.0,
+        "n_covered": 156,
+        "base": 0.6915,
+        "enriched": 0.7972,
+        "gain": 0.1057
+      }
+    ]
+  },
+  "holdout": {
+    "n_records": 1011,
+    "n_questions": 6566,
+    "curve": [
+      {
+        "mask": 0.0,
+        "completeness": 0.0,
+        "reachability": 0.5707220573689417,
+        "n_covered": 0,
+        "base": 0.2311,
+        "enriched": 0.3267,
+        "gain": 0.0956
+      },
+      {
+        "mask": 0.125,
+        "completeness": 0.09594460929772503,
+        "reachability": 0.581140350877193,
+        "n_covered": 97,
+        "base": 0.2662,
+        "enriched": 0.3571,
+        "gain": 0.0909
+      },
+      {
+        "mask": 0.25,
+        "completeness": 0.19090009891196835,
+        "reachability": 0.5938650306748466,
+        "n_covered": 193,
+        "base": 0.3046,
+        "enriched": 0.3855,
+        "gain": 0.0809
+      },
+      {
+        "mask": 0.375,
+        "completeness": 0.28486646884273,
+        "reachability": 0.6181818181818182,
+        "n_covered": 288,
+        "base": 0.3668,
+        "enriched": 0.4563,
+        "gain": 0.0895
+      },
+      {
+        "mask": 0.5,
+        "completeness": 0.3788328387734916,
+        "reachability": 0.6623376623376623,
+        "n_covered": 383,
+        "base": 0.4088,
+        "enriched": 0.4894,
+        "gain": 0.0806
+      },
+      {
+        "mask": 0.625,
+        "completeness": 0.47279920870425324,
+        "reachability": 0.7109826589595376,
+        "n_covered": 478,
+        "base": 0.4462,
+        "enriched": 0.5258,
+        "gain": 0.0796
+      },
+      {
+        "mask": 0.75,
+        "completeness": 0.5667655786350149,
+        "reachability": 0.7659574468085106,
+        "n_covered": 573,
+        "base": 0.4841,
+        "enriched": 0.5545,
+        "gain": 0.0704
+      },
+      {
+        "mask": 0.875,
+        "completeness": 0.6577645895153313,
+        "reachability": 0.8662613981762918,
+        "n_covered": 665,
+        "base": 0.5265,
+        "enriched": 0.5829,
+        "gain": 0.0564
+      },
+      {
+        "mask": 1.0,
+        "completeness": 0.7477744807121661,
+        "reachability": 1.0,
+        "n_covered": 756,
+        "base": 0.5638,
+        "enriched": 0.6064,
+        "gain": 0.0426
+      }
+    ]
+  },
+  "models": {
+    "M1": {
+      "form": "g0*(1-x)",
+      "params": {
+        "g0": 0.35623904883013485
+      },
+      "in_sample": {
+        "mae": 0.0119,
+        "rmse": 0.0132,
+        "r2": 0.969,
+        "predictions": [
+          0.3562,
+          0.3249,
+          0.295,
+          0.2652,
+          0.2338,
+          0.2024,
+          0.1726,
+          0.1428,
+          0.1114
+        ]
+      },
+      "out_of_sample": {
+        "mae": 0.1456,
+        "rmse": 0.1622,
+        "r2": -98.597,
+        "predictions": [
+          0.3562,
+          0.3221,
+          0.2882,
+          0.2548,
+          0.2213,
+          0.1878,
+          0.1543,
+          0.1219,
+          0.0899
+        ]
+      },
+      "completeness_threshold": 0.944
+    },
+    "M2": {
+      "form": "a + b*x",
+      "params": {
+        "a": 0.34975009822030667,
+        "b": -0.33210904653003787
+      },
+      "in_sample": {
+        "mae": 0.0109,
+        "rmse": 0.0119,
+        "r2": 0.974,
+        "predictions": [
+          0.3498,
+          0.3205,
+          0.2927,
+          0.2649,
+          0.2356,
+          0.2064,
+          0.1786,
+          0.1508,
+          0.1215
+        ]
+      },
+      "out_of_sample": {
+        "mae": 0.1482,
+        "rmse": 0.1621,
+        "r2": -98.488,
+        "predictions": [
+          0.3498,
+          0.3179,
+          0.2864,
+          0.2551,
+          0.2239,
+          0.1927,
+          0.1615,
+          0.1313,
+          0.1014
+        ]
+      },
+      "completeness_threshold": 0.993
+    },
+    "M3": {
+      "form": "g0*(1-x)*r",
+      "params": {
+        "g0": 0.35623904883013485
+      },
+      "in_sample": {
+        "mae": 0.0119,
+        "rmse": 0.0132,
+        "r2": 0.969,
+        "predictions": [
+          0.3562,
+          0.3249,
+          0.295,
+          0.2652,
+          0.2338,
+          0.2024,
+          0.1726,
+          0.1428,
+          0.1114
+        ]
+      },
+      "out_of_sample": {
+        "mae": 0.0696,
+        "rmse": 0.0729,
+        "r2": -19.127,
+        "predictions": [
+          0.2033,
+          0.1872,
+          0.1712,
+          0.1575,
+          0.1466,
+          0.1335,
+          0.1182,
+          0.1056,
+          0.0899
+        ]
+      },
+      "completeness_threshold": 0.921
+    },
+    "M4": {
+      "form": "g0*exp(-k*x)",
+      "params": {
+        "g0": 0.3811024603842321,
+        "k": 1.5740046862981891
+      },
+      "fitted_on": 9,
+      "in_sample": {
+        "mae": 0.0211,
+        "rmse": 0.023,
+        "r2": 0.904,
+        "predictions": [
+          0.3811,
+          0.3318,
+          0.2908,
+          0.2549,
+          0.2219,
+          0.1932,
+          0.1693,
+          0.1484,
+          0.1292
+        ]
+      },
+      "out_of_sample": {
+        "mae": 0.1498,
+        "rmse": 0.166,
+        "r2": -103.334,
+        "predictions": [
+          0.3811,
+          0.3277,
+          0.2822,
+          0.2434,
+          0.2099,
+          0.1811,
+          0.1562,
+          0.1353,
+          0.1175
+        ]
+      },
+      "completeness_threshold": NaN
+    }
+  }
+}

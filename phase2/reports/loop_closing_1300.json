@@ -1,0 +1,43 @@
+{
+  "n_records": 1241,
+  "n_questions": 300,
+  "prediction_coverage": 1241,
+  "conditions": {
+    "none": {
+      "overall": 0.615,
+      "per_type": {
+        "known_item": 0.7900048883133581,
+        "topical": 0.19857809310272778,
+        "bib_fact": 0.8267042046907231
+      },
+      "records_with_subjects": 0
+    },
+    "llm_matched": {
+      "overall": 0.688,
+      "per_type": {
+        "known_item": 0.7727951004025295,
+        "topical": 0.3804381136423318,
+        "bib_fact": 0.8782224379488532
+      },
+      "records_with_subjects": 931
+    },
+    "llm": {
+      "overall": 0.719,
+      "per_type": {
+        "known_item": 0.754269277816922,
+        "topical": 0.47580286956641915,
+        "bib_fact": 0.8959206306177108
+      },
+      "records_with_subjects": 1241
+    },
+    "gold": {
+      "overall": 0.751,
+      "per_type": {
+        "known_item": 0.7861796848202498,
+        "topical": 0.5571051934566641,
+        "bib_fact": 0.8846081285892103
+      },
+      "records_with_subjects": 931
+    }
+  }
+}

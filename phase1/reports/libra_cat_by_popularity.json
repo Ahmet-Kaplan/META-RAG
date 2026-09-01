@@ -1,0 +1,54 @@
+{
+  "n_scored": 687,
+  "n_buckets": 3,
+  "buckets": [
+    {
+      "n_records": 229,
+      "n_gold_headings": 482,
+      "n_pred_headings": 698,
+      "exact": 0.332,
+      "exact_or_semantic": 0.585,
+      "any_level": 0.649,
+      "authority_violation_rate": 0.01,
+      "ddc_n": 82,
+      "ddc_exact": 0.561,
+      "ddc_class3": 0.829,
+      "label": "1877-2804 downloads",
+      "dl_min": 1877,
+      "dl_max": 2804,
+      "dl_median": 2314
+    },
+    {
+      "n_records": 229,
+      "n_gold_headings": 456,
+      "n_pred_headings": 705,
+      "exact": 0.298,
+      "exact_or_semantic": 0.542,
+      "any_level": 0.586,
+      "authority_violation_rate": 0.0128,
+      "ddc_n": 81,
+      "ddc_exact": 0.519,
+      "ddc_class3": 0.827,
+      "label": "2805-5135 downloads",
+      "dl_min": 2805,
+      "dl_max": 5135,
+      "dl_median": 3528
+    },
+    {
+      "n_records": 229,
+      "n_gold_headings": 496,
+      "n_pred_headings": 728,
+      "exact": 0.413,
+      "exact_or_semantic": 0.653,
+      "any_level": 0.679,
+      "authority_violation_rate": 0.0069,
+      "ddc_n": 82,
+      "ddc_exact": 0.72,
+      "ddc_class3": 0.866,
+      "label": "5139-142569 downloads",
+      "dl_min": 5139,
+      "dl_max": 142569,
+      "dl_median": 22912
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "sizes": [
+    150,
+    300,
+    600,
+    1241
+  ],
+  "levels": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "seed": 23,
+  "sample_seed": 5,
+  "nested": true,
+  "curves": {
+    "150": {
+      "n_questions": 996,
+      "rows": [
+        {
+          "n_records": 150,
+          "completeness": 0.0,
+          "reachability": 1.0,
+          "base": 0.3867,
+          "enriched": 0.6419,
+          "gain": 0.2552
+        },
+        {
+          "n_records": 150,
+          "completeness": 0.2,
+          "reachability": 1.0,
+          "base": 0.4755,
+          "enriched": 0.7056,
+          "gain": 0.2301
+        },
+        {
+          "n_records": 150,
+          "completeness": 0.4,
+          "reachability": 1.0,
+          "base": 0.5958,
+          "enriched": 0.7414,
+          "gain": 0.1456
+        },
+        {
+          "n_records": 150,
+          "completeness": 0.6,
+          "reachability": 1.0,
+          "base": 0.6928,
+          "enriched": 0.7948,
+          "gain": 0.102
+        },
+        {
+          "n_records": 150,
+          "completeness": 0.8,
+          "reachability": 1.0,
+          "base": 0.7983,
+          "enriched": 0.8341,
+          "gain": 0.0358
+        }
+      ]
+    },
+    "300": {
+      "n_questions": 2007,
+      "rows": [
+        {
+          "n_records": 300,
+          "completeness": 0.0,
+          "reachability": 1.0,
+          "base": 0.3405,
+          "enriched": 0.5931,
+          "gain": 0.2526
+        },
+        {
+          "n_records": 300,
+          "completeness": 0.18333333333333332,
+          "reachability": 1.0,
+          "base": 0.4351,
+          "enriched": 0.6356,
+          "gain": 0.2006
+        },
+        {
+          "n_records": 300,
+          "completeness": 0.36666666666666664,
+          "reachability": 1.0,
+          "base": 0.5368,
+          "enriched": 0.689,
+          "gain": 0.1522
+        },
+        {
+          "n_records": 300,
+          "completeness": 0.5466666666666666,
+          "reachability": 1.0,
+          "base": 0.6195,
+          "enriched": 0.7219,
+          "gain": 0.1024
+        },
+        {
+          "n_records": 300,
+          "completeness": 0.73,
+          "reachability": 1.0,
+          "base": 0.7133,
+          "enriched": 0.7507,
+          "gain": 0.0373
+        }
+      ]
+    },
+    "600": {
+      "n_questions": 4019,
+      "rows": [
+        {
+          "n_records": 600,
+          "completeness": 0.0,
+          "reachability": 1.0,
+          "base": 0.298,
+          "enriched": 0.5279,
+          "gain": 0.2298
+        },
+        {
+          "n_records": 600,
+          "completeness": 0.18333333333333332,
+          "reachability": 1.0,
+          "base": 0.3616,
+          "enriched": 0.5654,
+          "gain": 0.2038
+        },
+        {
+          "n_records": 600,
+          "completeness": 0.36833333333333335,
+          "reachability": 1.0,
+          "base": 0.4539,
+          "enriched": 0.5999,
+          "gain": 0.146
+        },
+        {
+          "n_records": 600,
+          "completeness": 0.555,
+          "reachability": 1.0,
+          "base": 0.5339,
+          "enriched": 0.6274,
+          "gain": 0.0935
+        },
+        {
+          "n_records": 600,
+          "completeness": 0.7383333333333333,
+          "reachability": 1.0,
+          "base": 0.6312,
+          "enriched": 0.6799,
+          "gain": 0.0487
+        }
+      ]
+    },
+    "1241": {
+      "n_questions": 8046,
+      "rows": [
+        {
+          "n_records": 1241,
+          "completeness": 0.0,
+          "reachability": 1.0,
+          "base": 0.2368,
+          "enriched": 0.4381,
+          "gain": 0.2012
+        },
+        {
+          "n_records": 1241,
+          "completeness": 0.18775181305398872,
+          "reachability": 1.0,
+          "base": 0.3163,
+          "enriched": 0.488,
+          "gain": 0.1717
+        },
+        {
+          "n_records": 1241,
+          "completeness": 0.37389202256244963,
+          "reachability": 1.0,
+          "base": 0.3909,
+          "enriched": 0.527,
+          "gain": 0.136
+        },
+        {
+          "n_records": 1241,
+          "completeness": 0.5560032232070911,
+          "reachability": 1.0,
+          "base": 0.4788,
+          "enriched": 0.5637,
+          "gain": 0.0849
+        },
+        {
+          "n_records": 1241,
+          "completeness": 0.7348912167606769,
+          "reachability": 1.0,
+          "base": 0.5545,
+          "enriched": 0.6022,
+          "gain": 0.0476
+        }
+      ]
+    }
+  },
+  "factorization": {
+    "reference_size": 150,
+    "scales": {
+      "300": {
+        "g": 0.9576,
+        "mae": 0.0097,
+        "r2": 0.977
+      },
+      "600": {
+        "g": 0.9147,
+        "mae": 0.0079,
+        "r2": 0.979
+      },
+      "1241": {
+        "g": 0.8017,
+        "mae": 0.0115,
+        "r2": 0.942
+      }
+    },
+    "power_law": {
+      "form": "g(N) = exp(a) * N^b",
+      "a": 0.687,
+      "b": -0.1256,
+      "predicted_g": {
+        "300": 0.9711,
+        "600": 0.8901,
+        "1241": 0.8124
+      }
+    }
+  }
+}

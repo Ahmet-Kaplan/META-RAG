@@ -1,0 +1,235 @@
+{
+  "n_records": 227,
+  "n_enrichable": 227,
+  "n_questions": 1076,
+  "budgets": [
+    0.1,
+    0.25,
+    0.5,
+    0.75
+  ],
+  "random_seeds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "topical_base": 0.3133,
+  "topical_full": 0.6564,
+  "full_gain": 0.3431,
+  "curves": {
+    "title_poverty": {
+      "0.10": {
+        "topical": 0.3624,
+        "gain": 0.0491,
+        "frac_of_full_gain": 0.143,
+        "n_llm_calls": 23
+      },
+      "0.25": {
+        "topical": 0.43,
+        "gain": 0.1167,
+        "frac_of_full_gain": 0.34,
+        "n_llm_calls": 57
+      },
+      "0.50": {
+        "topical": 0.5148,
+        "gain": 0.2015,
+        "frac_of_full_gain": 0.587,
+        "n_llm_calls": 114
+      },
+      "0.75": {
+        "topical": 0.6024,
+        "gain": 0.2891,
+        "frac_of_full_gain": 0.842,
+        "n_llm_calls": 170
+      }
+    },
+    "novel_idf": {
+      "0.10": {
+        "topical": 0.3443,
+        "gain": 0.031,
+        "frac_of_full_gain": 0.09,
+        "n_llm_calls": 23
+      },
+      "0.25": {
+        "topical": 0.4147,
+        "gain": 0.1014,
+        "frac_of_full_gain": 0.296,
+        "n_llm_calls": 57
+      },
+      "0.50": {
+        "topical": 0.4973,
+        "gain": 0.184,
+        "frac_of_full_gain": 0.536,
+        "n_llm_calls": 114
+      },
+      "0.75": {
+        "topical": 0.6027,
+        "gain": 0.2894,
+        "frac_of_full_gain": 0.843,
+        "n_llm_calls": 170
+      }
+    },
+    "oracle": {
+      "0.10": {
+        "topical": 0.4252,
+        "gain": 0.1119,
+        "frac_of_full_gain": 0.326,
+        "n_llm_calls": 23
+      },
+      "0.25": {
+        "topical": 0.5923,
+        "gain": 0.279,
+        "frac_of_full_gain": 0.813,
+        "n_llm_calls": 57
+      },
+      "0.50": {
+        "topical": 0.671,
+        "gain": 0.3577,
+        "frac_of_full_gain": 1.042,
+        "n_llm_calls": 114
+      },
+      "0.75": {
+        "topical": 0.663,
+        "gain": 0.3497,
+        "frac_of_full_gain": 1.019,
+        "n_llm_calls": 170
+      }
+    },
+    "random": {
+      "0.10": {
+        "topical": 0.3395,
+        "gain": 0.0262,
+        "frac_of_full_gain": 0.076,
+        "n_llm_calls": 23
+      },
+      "0.25": {
+        "topical": 0.4,
+        "gain": 0.0867,
+        "frac_of_full_gain": 0.253,
+        "n_llm_calls": 57
+      },
+      "0.50": {
+        "topical": 0.4826,
+        "gain": 0.1693,
+        "frac_of_full_gain": 0.494,
+        "n_llm_calls": 114
+      },
+      "0.75": {
+        "topical": 0.5638,
+        "gain": 0.2505,
+        "frac_of_full_gain": 0.73,
+        "n_llm_calls": 170
+      }
+    }
+  },
+  "random_per_seed": {
+    "0.10": [
+      0.3419,
+      0.3474,
+      0.3516,
+      0.3331,
+      0.3233
+    ],
+    "0.25": [
+      0.3881,
+      0.4121,
+      0.4082,
+      0.3963,
+      0.3954
+    ],
+    "0.50": [
+      0.4836,
+      0.4579,
+      0.4904,
+      0.4851,
+      0.4963
+    ],
+    "0.75": [
+      0.5822,
+      0.5553,
+      0.5875,
+      0.5668,
+      0.5273
+    ]
+  },
+  "significance_vs_random": {
+    "title_poverty": {
+      "0.10": {
+        "delta": 0.0206,
+        "ci95": [
+          -0.0132,
+          0.0554
+        ],
+        "p": 0.24959,
+        "n": 338
+      },
+      "0.25": {
+        "delta": 0.0419,
+        "ci95": [
+          -0.0007,
+          0.0861
+        ],
+        "p": 0.06265,
+        "n": 338
+      },
+      "0.50": {
+        "delta": 0.0312,
+        "ci95": [
+          -0.0167,
+          0.0794
+        ],
+        "p": 0.20544,
+        "n": 338
+      },
+      "0.75": {
+        "delta": 0.0202,
+        "ci95": [
+          -0.0231,
+          0.062
+        ],
+        "p": 0.34818,
+        "n": 338
+      }
+    },
+    "novel_idf": {
+      "0.10": {
+        "delta": 0.0024,
+        "ci95": [
+          -0.0254,
+          0.0309
+        ],
+        "p": 0.86731,
+        "n": 338
+      },
+      "0.25": {
+        "delta": 0.0266,
+        "ci95": [
+          -0.009,
+          0.0638
+        ],
+        "p": 0.15409,
+        "n": 338
+      },
+      "0.50": {
+        "delta": 0.0137,
+        "ci95": [
+          -0.0327,
+          0.0606
+        ],
+        "p": 0.56887,
+        "n": 338
+      },
+      "0.75": {
+        "delta": 0.0205,
+        "ci95": [
+          -0.0162,
+          0.0578
+        ],
+        "p": 0.29184,
+        "n": 338
+      }
+    }
+  }
+}

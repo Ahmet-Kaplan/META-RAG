@@ -1,0 +1,9 @@
+{
+  "matches_with_isbn": 198,
+  "enriched": 102,
+  "no_record": 122,
+  "with_ht_subjects": 36,
+  "with_ht_ddc": 19,
+  "with_ht_lcc": 70,
+  "avg_ht_subjects": 0.78
+}

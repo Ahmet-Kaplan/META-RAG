@@ -1,0 +1,36 @@
+# secrets — never commit
+.env
+**/.env
+
+# caches
+.hf_cache/
+**/.hf_cache/
+.mplcache/
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+
+# large derived data (regenerate via pipeline; see DATA.md)
+phase2/data/index*/
+phase2/data/corpus*.jsonl
+phase2/data/corpus_scaled_records_noise*/
+phase1/data/samples/
+phase1/data/browser_downloads/
+
+# pipeline state
+.scaled_state.json
+
+# latex build artifacts
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.log
+paper/*.out
+paper/submission.tex
+
+# scratch
+sources/
