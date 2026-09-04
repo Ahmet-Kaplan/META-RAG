@@ -55,6 +55,12 @@ def main():
                     help="generate WITHOUT the citation-grounding protocol (verification ablation)")
     ap.add_argument("--seed", type=int, default=11)
     ap.add_argument("--report", default=str(ROOT / "reports" / "per_type_metrics.md"))
+    ap.add_argument("--answers-out", default="",
+                    help="persist every generated answer + citations + judge "
+                         "verdict as JSONL (one {id,question,answer,cited_recs,"
+                         "cited_chunks,judge_faithful} per line) to this path; "
+                         "used by the human faithfulness pilot "
+                         "(phase1/scripts/export_faithfulness_pilot.py)")
     args = ap.parse_args()
 
     with open(args.qa, encoding="utf-8") as f:
@@ -158,6 +164,30 @@ def main():
                         "all_citations_verified": v["all_citations_verified"],
                         "judge_faithful": v["judge_faithful"],
                     })
+                if args.answers_out:
+                    # persist the FULL answer + cited sources + judge verdict
+                    # for the human faithfulness pilot (export_faithfulness_pilot.py).
+                    # We must give the human the same evidence the judge saw,
+                    # so render the source text exactly as verify() did.
+                    srcs = [f"REC {r['work_key']}: {r['title']} {r.get('subjects', [])}"
+                            for r in rec_objs]
+                    srcs += [f"CHUNK {c['chunk_id']}: {c['text'][:300]}"
+                             for c in chunk_objs]
+                    out_row = {
+                        "id": f"{q['qid']}::{mode}",
+                        "qid": q["qid"],
+                        "mode": mode,
+                        "grounding": not args.no_grounding,
+                        "type": q["type"],
+                        "question": q["question_polished"],
+                        "answer": answer,
+                        "cited_recs": v["cited_recs"],
+                        "cited_chunks": v["cited_chunks"],
+                        "sources": srcs,
+                        "judge_faithful": v["judge_faithful"],
+                    }
+                    with open(args.answers_out, "a", encoding="utf-8") as ao:
+                        ao.write(json.dumps(out_row) + "\n")
         results_mode_gen[mode] = gen_stats
         if gen_stats["n"]:
             print(f"[gen {mode}] citations: {gen_stats['has_citation']}/{gen_stats['n']}"
