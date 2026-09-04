@@ -1,0 +1,37 @@
+{
+ "n_unrelated": 932,
+ "validated_against_shipped": true,
+ "evidence": {
+  "gold_elsewhere": 158,
+  "family_elsewhere": 335,
+  "near_semantic_own_gold": 241,
+  "union_any_evidence": 343,
+  "residual_no_evidence": 589,
+  "share_any_evidence": 0.368
+ },
+ "max_cosine_to_own_gold_distribution": {
+  "[0.00,0.60)": 691,
+  "[0.60,0.75)": 241,
+  "[0.75,1]": 0
+ },
+ "example_gold_elsewhere": [
+  "england -- social life and customs -- 19th century",
+  "optics -- early works to 1800",
+  "wilde oscar 1854-1900 -- criticism and interpretation",
+  "authors english -- biography",
+  "young women -- fiction",
+  "english poetry -- 19th century",
+  "english poetry -- 19th century",
+  "man-woman relationships -- fiction"
+ ],
+ "example_family_elsewhere": [
+  "england -- social life and customs -- 19th century",
+  "conduct of life",
+  "fairy tales",
+  "christian life -- fiction",
+  "country life -- england -- history",
+  "agricultural laborers -- england -- history",
+  "political science",
+  "science -- philosophy -- early works to 1800"
+ ]
+}

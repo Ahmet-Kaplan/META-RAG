@@ -25,7 +25,8 @@ Stages (run in order; each caches to phase2/reports/):
   score   graded nDCG@10 per config, against single-gold
 
 Usage:
-  python3 phase2/scripts/pooled_eval.py
+  python3 phase2/scripts/pooled_eval.py                 # 300-question sample (default)
+  python3 phase2/scripts/pooled_eval.py --all-topical   # ALL 338 in-corpus topical questions
 """
 
 import argparse
@@ -112,8 +113,12 @@ def stage_runs(questions: List[Dict], corpus_keys: set, args) -> Dict:
         idx = MetaIndex(str(idx_dir))
         per_q = {}
         for q in questions:
+            # meta-mode record rankings never depend on the chunk rankings, so
+            # skipping chunk retrieval is exact (retrieval.py documents this);
+            # it avoids BM25 over ~88k chunks per query for the 6 meta configs.
             chunks, records = idx.retrieve(q["question_polished"], mode=mode,
-                                           topk_chunks=50)
+                                           topk_chunks=50,
+                                           skip_chunks=(mode == "meta"))
             if mode == "meta":
                 rec_ids = [r for r, _ in records]
             else:
@@ -218,6 +223,9 @@ def main() -> None:
                     help="re-run retrieval even if the cache matches the prefix")
     ap.add_argument("--index-prefix", default="index_scaled_ts")
     ap.add_argument("--questions", type=int, default=300)
+    ap.add_argument("--all-topical", action="store_true",
+                    help="judge EVERY topical question in the in-corpus pool "
+                         "(338), not a sampled subset")
     ap.add_argument("--seed", type=int, default=11)
     ap.add_argument("--workers", type=int, default=8)
     args = ap.parse_args()
@@ -230,25 +238,40 @@ def main() -> None:
 
     qa = [json.loads(l) for l in open(args.qa, encoding="utf-8") if l.strip()]
     pool_q = [q for q in qa if q.get("work_key") in corpus_keys]
-    sample = random.Random(args.seed).sample(pool_q, min(args.questions, len(pool_q)))
-    topical = [q for q in sample if q["type"] == "topical"]
-    logger.info("%d topical questions in the evaluation sample", len(topical))
+    if args.all_topical:
+        topical = [q for q in pool_q if q["type"] == "topical"]
+        logger.info("%d topical questions in the in-corpus pool (all-topical)",
+                    len(topical))
+    else:
+        sample = random.Random(args.seed).sample(pool_q, min(args.questions, len(pool_q)))
+        topical = [q for q in sample if q["type"] == "topical"]
+        logger.info("%d topical questions in the evaluation sample", len(topical))
 
     runs_path = ROOT / "reports" / "pooled_runs.json"
-    # The cache is keyed by the index prefix it was produced from. Without this
-    # the cache silently outlived a rebuild of the record index: --index-prefix
-    # was honoured by stage_runs and then never reached, so the pooled check
-    # kept validating the superseded system.
+    # The cache is keyed by the index prefix it was produced from AND by the
+    # qid set it covers. Without this the cache silently outlived a rebuild of
+    # the record index: --index-prefix was honoured by stage_runs and then
+    # never reached, so the pooled check kept validating the superseded
+    # system. The same failure mode would hit an --all-topical run: a cache
+    # holding runs for 103 qids would be loaded for a 338-qid request and the
+    # 235 new questions would score as empty.
     cached = json.loads(runs_path.read_text()) if runs_path.exists() else {}
-    if cached.get("_index_prefix") == args.index_prefix and not args.refresh_runs:
+    cached_qids = set(cached.get("_qids", []))
+    need_qids = {q["qid"] for q in topical}
+    if (cached.get("_index_prefix") == args.index_prefix
+            and cached_qids == need_qids and not args.refresh_runs):
         runs = {k: v for k, v in cached.items() if not k.startswith("_")}
-        logger.info("loaded cached runs (%d configs, prefix=%s)", len(runs), args.index_prefix)
+        logger.info("loaded cached runs (%d configs, %d qids, prefix=%s)",
+                    len(runs), len(cached_qids), args.index_prefix)
     else:
         if cached:
-            logger.info("runs cache was built from prefix=%s, need %s: re-running",
-                        cached.get("_index_prefix", "<unrecorded>"), args.index_prefix)
+            logger.info("runs cache (prefix=%s, %d qids) does not cover the "
+                        "requested %d qids: re-running retrieval",
+                        cached.get("_index_prefix", "<unrecorded>"),
+                        len(cached_qids), len(need_qids))
         runs = stage_runs(topical, corpus_keys, args)
-        runs_path.write_text(json.dumps({**runs, "_index_prefix": args.index_prefix}))
+        runs_path.write_text(json.dumps({**runs, "_index_prefix": args.index_prefix,
+                                         "_qids": sorted(need_qids)}))
 
     qrels_path = ROOT / "reports" / "pooled_qrels.json"
     prior = json.loads(qrels_path.read_text()) if qrels_path.exists() else {}

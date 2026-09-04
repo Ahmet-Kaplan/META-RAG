@@ -3,10 +3,11 @@ message: "If you use this software or dataset, please cite it as below."
 title: "LIBRA-Eval & META-RAG: Metadata-Aware Retrieval-Augmented Generation for Library Discovery"
 abstract: >-
   A metadata-aware RAG system for library discovery (META-RAG) and a two-sided
-  benchmark (LIBRA-Eval) with 1,200 discovery questions and 600 cataloging
-  records. Shows retrieval quality is bounded by metadata quality: metadata-aware
-  retrieval improves topical discovery nDCG@10 from 0.415 to 0.633 (p<0.001) on
-  227 books / 300 questions.
+  benchmark (LIBRA-Eval) with 8,690 discovery questions (1,076 evaluated
+  in-corpus) and 600 cataloging records. Shows retrieval quality is bounded by
+  metadata quality: metadata-aware retrieval improves topical discovery
+  nDCG@10 from 0.465 to 0.691 (p<0.001) over the full in-corpus pool of 227
+  books.
 type: software
 authors:
   - name: "Ahmet Kaplan"

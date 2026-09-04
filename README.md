@@ -17,13 +17,13 @@ Intelligence and Digital Libraries (AIDL 2026). This repository contains:
   - A HathiTrust professional-MARC cross-check of the gold (89% DDC
     class-level agreement; subject headings differ mainly in form).
 
-**Headline result (227 books, 300 questions):** META-RAG improves retrieval
-nDCG@10 from 0.749 (best metadata-blind hybrid) to 0.839; on topical
-discovery — where subject headings carry the signal — from 0.415 to 0.633
-(paired permutation test, p < 0.001). Field ablation shows subjects drive
-topical discovery (0.283 → 0.643); a metadata corruption sweep confirms
-retrieval quality degrades monotonically with metadata quality (topical
-0.633 → 0.250 at 100% corruption).
+**Headline result (227 books, full in-corpus question pool n=1076):** META-RAG
+improves retrieval nDCG@10 from 0.781 (best metadata-blind hybrid) to 0.851;
+on topical discovery — where subject headings carry the signal — from 0.465
+to 0.691 (paired permutation test, p < 0.001). Field ablation shows subjects
+drive topical discovery (title-only 0.313 → title+subjects 0.691 topical); a
+metadata corruption sweep confirms retrieval quality degrades monotonically
+with metadata quality (topical 0.691 → 0.265 at 100% corruption).
 
 ## Quickstart (5-book demo, ~5 minutes)
 
