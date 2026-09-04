@@ -40,17 +40,41 @@ Sample: 120 pairs across 18 topical queries, grade-enriched (LLM grades
 2/1/0 ≈ 42/21/57) so the informative judgments are not drowned in
 grade-0s.
 
-### Step A2 — two labelers fill the CSVs
-Hand `labeler_A.csv` to labeler A and `labeler_B.csv` to labeler B **without
-items.jsonl** (it leaks the LLM's answer). Each enters 0/1/2 per row using
-`rubric.md`. ~20–30 s/pair → 120 pairs ≈ 40–60 min per person.
+### Step A2 — two labelers grade (guided UI, no spreadsheet editing)
 
-> Blind each labeler to the other's sheet and to items.jsonl. If you want a
-> second batch, change `--seed` or raise `--per-labeler` and re-run (only
-> the CSVs/items regenerate; nothing else changes).
+Each labeler gets a **click-through grading page**, not a raw CSV:
+
+```bash
+python3 phase1/scripts/make_grade_html.py      # regenerates both pages
+```
+
+Produces `phase1/data/pilot/relevance/grade_labeler_A.html` and
+`grade_labeler_B.html`. Each page:
+
+- shows ONE item at a time: the patron's request + the candidate book
+  (title / authors / subjects) — the catalog view a librarian would have;
+- grades with buttons or keyboard (keys `0`, `1`, `2`; `←`/`→` to move);
+- auto-saves progress to the browser's localStorage — close it and reopen
+  to continue;
+- has a **Download graded CSV** button that writes
+  `labeler_A.graded.csv` / `labeler_B.graded.csv` in the page's format.
+
+Labelers open the HTML in a browser (double-click), work through the items
+(~20–30 s/pair → 120 pairs ≈ 40–60 min), and download the graded CSV when
+done. The rubric is collapsible at the top of the page. Send each labeler
+their own file (A or B); do NOT share `items.jsonl` (it contains the LLM
+grades).
+
+Regenerate with `--only A` or `--only B` if only one page is needed. The
+pages embed the CSV rows as JSON (parsed by Python, not the browser), so the
+commas inside author/subject strings cannot mis-split fields — verified by a
+round-trip test through the scorer's own csv reader.
 
 ### Step A3 — score
 ```bash
+# point the scorer at the downloaded graded CSV(s) by copying them into place:
+cp labeler_A.graded.csv phase1/data/pilot/relevance/labeler_A.csv
+cp labeler_B.graded.csv phase1/data/pilot/relevance/labeler_B.csv
 python3 phase1/scripts/score_relevance_pilot.py
 ```
 Report (`report.md` + stdout): coverage, human–human Cohen's κ (3-way and
