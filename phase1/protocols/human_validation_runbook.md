@@ -81,6 +81,21 @@ Report (`report.md` + stdout): coverage, human–human Cohen's κ (3-way and
 relevant-vs-not), per-labeler human–LLM κ and exact agreement, confusion
 matrix. Target for the paper: κ ≥ 0.6–0.7 human–LLM.
 
+### Study A status — COMPLETE (2026-09-05)
+Two raters graded all 120 items. Results (independently re-verified):
+
+| Agreement | κ 3-way | κ rel-vs-not | Exact |
+|---|---|---|---|
+| human–human | 0.755 | 0.821 | 85.8% |
+| rater A vs LLM | 0.638 | 0.767 | 78.3% |
+| rater B vs LLM | 0.795 | 0.870 | 87.5% |
+| consensus vs LLM | 0.795 | 0.890 | — |
+
+Error direction (103 consensus items): the LLM judge missed **0**
+human-relevant records, over-called 5 — it errs toward inclusion, never
+omission. These numbers now appear in the paper (§V-G, Limitations), the
+response letter (R5.3), and this repo (`phase1/data/pilot/relevance/`).
+
 ### Step A4 — (optional, stronger) graded-nDCG on human grades
 The kappa answers "do humans agree with the LLM judge?" — enough for the
 rebuttal. A stronger claim ("the +0.057 margin survives human grading")
