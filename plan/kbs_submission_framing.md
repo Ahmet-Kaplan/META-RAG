@@ -150,10 +150,10 @@ Avoid titles that lead with "cataloging" or "libraries".
 | 3. Knowledge & system model | Knowledge being acquired (two representations + completeness); acquisition component; consuming KBS (record index + field ablation); measurement apparatus (two-sided benchmark, multi-level rubric, pooled graded) | Draft: `plan/kbs_method.tex` |
 | 4. Corpus & ground truth | Corpus (Gutenberg+OL join, chunks); gold KB (LCSH + DDC, any-gold-match); HathiTrust gold validation (inter-source agreement motivates multi-level rubric); released benchmark instruments | Draft: `plan/kbs_data.tex` |
 | 5. Validation of acquired knowledge (E2/E3) | Multi-level agreement (exact/semantic/acceptable); error taxonomy + unmatched-residual decomposition (158/241/335, 36.8% union, 589 residual); representation-type + memorization drivers; agreement-ceiling reading | Draft: `plan/kbs_valid.tex` (+ `plan/kbs_unmatched_numbers.tex`) |
-| 6. Utility of acquired knowledge (RQ1) | Field ablation (representation dependence); sparsity sweep (completeness dependence); robustness | Conference RQ1/RQ5 + E1 |
-| 7. Cost of acquisition (RQ4) | Expert time from scratch vs. verifying LLM output; edits; quality | E4 instrument (ready) |
-| 8. Deployment analysis (RQ5) | Utility per expert-hour vs. coverage; break-even; sensitivity | New |
-| 9. Discussion | Generalization: what this says about LLM knowledge acquisition beyond libraries; limits | Conference Conclusion expanded |
+| 6. Utility of acquired knowledge (RQ1) | Field ablation (representation dependence: subjects +0.382 vs DDC ~0); coverage sweep (completeness dependence: monotone-decreasing, never zero); robustness; pooled graded + human calibration | Draft: `plan/kbs_util.tex` |
+| 7. Cost of acquisition (RQ4) | Counterbalanced panel: manual vs. verify time/edits/quality | Draft: `plan/kbs_cost.tex` (instrument ready; results \TODO E4) |
+| 8. Deployment analysis (RQ5) | Decision model G(c)/t; three structural readings (lowest-coverage regime, near-final drafts, representation targeting); caveats | Draft: `plan/kbs_synth.tex` |
+| 9. Discussion & limitations | Three claims restated; what transfers vs. not; query-realism/gold/model/cost limits; ethics; future work | Draft: `plan/kbs_disc.tex` |
 
 ---
 

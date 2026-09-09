@@ -1,0 +1,120 @@
+% ============================================================
+% kbs_disc.tex — KBS journal: Discussion and limitations (Section 9).
+% Section label: sec:disc.
+% Bibliography: kbs_ke_references.bib + paper/references.bib.
+% ============================================================
+
+\section{Discussion and Limitations}
+\label{sec:disc}
+
+\subsection{What the paper establishes}
+
+Read as a knowledge-engineering study, this paper establishes three
+claims. First, LLM-acquired subject knowledge is a \emph{viable
+acquisition channel}: validated against professional gold under a
+multi-level rubric that respects legitimate inter-cataloger variation, it
+operates near the agreement ceiling the gold itself imposes, and its errors
+are rarely fabrication (Section~\ref{sec:valid}) \TODO{E2: report panel
+ceiling}. Second, its utility is \emph{representation-dependent}: a
+knowledge-based retrieval system consumes the thesaurus representation of
+the acquired knowledge and not the hierarchical one, and a knowledge
+manager targeting topical discovery should therefore acquire subject
+headings, not classification (Section~\ref{sec:util}). Third, its value is
+\emph{completeness-dependent}: the gain from acquisition is largest where
+the knowledge base is sparsest and never reaches zero, which locates the
+rational deployment in the gap-filling regime (Sections~\ref{sec:util}
+and~\ref{sec:synth}).
+
+The methodological contribution is separable from these findings: the
+paper completes the knowledge-engineering cycle for machine-acquired
+knowledge---acquire, represent, validate against consensus, measure in the
+consuming system---and reports each stage against the ceiling the domain
+imposes, with every number traceable to released artifacts
+(Sections~\ref{sec:data}--\ref{sec:cost}).
+
+\subsection{Generalization}
+
+The domain is bibliographic subject knowledge, but the object of study is
+the acquisition channel. Three results should transfer to other knowledge
+domains, and one should not. \emph{Representation dependence}---the finding
+that downstream utility is carried by an open, pre-coordinated vocabulary
+and not by a closed hierarchy---is a claim about the structure of
+knowledge representations and the retrieval task, not about libraries;
+we would expect an analogous contrast wherever a consuming system matches
+queries against one vocabulary type. \emph{Completeness dependence}---value
+concentrated where coverage is low---should transfer to any knowledge base
+with uneven coverage. The \emph{validation methodology} (multi-level
+agreement read against an inter-source ceiling) transfers directly. What
+should not transfer is the specific gain magnitude, which is collection- and
+task-specific; we report it within the studied collections and make no
+claim about collections unlike them.
+
+\subsection{Limitations}
+
+\textbf{Query realism.} Topical questions in the discovery pool are
+paraphrases of each record's own gold subject heading. Pooled graded
+judging and human calibration (Section~\ref{sec:util}) fix the scoring
+bias, not the query distribution: topical numbers remain an upper bound on
+what unconstrained patron queries would yield. The authority-sourced query
+design---sampling headings independently of the corpus and judging
+relevance to them---is the planned fix \TODO{run authority-sourced query
+set}.
+
+\textbf{Corpus and language.} The collection is canonical English
+public-domain literature. The memorization probe bounds recall effects
+across well-known works but says nothing about genuinely obscure or
+contemporary material; a corpus with such material is required to extend
+the acquisition claim beyond the studied regime \TODO{E1}.
+
+\textbf{Gold and agreement.} Gold subject knowledge is professional but
+single-source at benchmark scale; the HathiTrust cross-check quantifies
+inter-source disagreement, and the panel-validated gold and measured
+agreement ceiling \TODO{E2} convert the single-source figures into
+consensus-relative accuracy. Classification gold aggregates editions and is
+scored as any-gold-match.
+
+\textbf{Models and conditioning.} The primary acquisition runs use a single
+LLM conditioned on sparse records. Multi-model replication and
+full-text-conditioned acquisition \TODO{E3} bound the model and conditioning
+dependence of the validity results; retrieval results are
+model-independent by construction (they are scored against record
+identifiers with no LLM in the loop).
+
+\textbf{Cost estimates.} The cost side rests on a small expert panel and is
+reported per-cataloger with sensitivity analysis \TODO{E4}; the deployment
+analysis should be read as a pilot decision model, not a precise
+cost schedule.
+
+\textbf{Representation coverage of the study.} We study one thesaurus
+(LCSH) and one taxonomy (DDC) as instances of the two representation
+classes. The mechanism argument---open pre-coordinated strings versus
+closed hierarchies---predicts the contrast generalizes across vocabularies,
+but only the two instances are measured here.
+
+\subsection{Ethics and responsible AI}
+
+All source data are open and public-domain; no patron or circulation data
+is used. Generated metadata is evaluated for research purposes only and
+never written back to production catalogs. The generative-AI disclosure
+(Section~\ref{sec:method:benchmark}) states every role the LLM played,
+including as judge and as question polisher, and all generated content was
+programmatically validated. The cataloger-panel study follows an explicit
+protocol with consent and de-identification \TODO{E2: attach the IRB/consent
+note}. We report regressions as prominently as gains---the
+bibliographic-fact deficit and the known-item trade are in the results, not
+the appendix---because the deployment decision this paper supports is only
+as trustworthy as its honest cost accounting.
+
+\subsection{Future work}
+
+Beyond the extensions already flagged (authority-sourced queries,
+multi-model and full-text-conditioned acquisition, panel-validated gold and
+cost), three directions follow directly. First, the representation-dependence
+result should be tested across other vocabulary pairs (other thesauri,
+other taxonomies, and ontologies proper) to confirm the mechanism.
+Second, the decision model in Section~\ref{sec:synth} should be calibrated
+against real collections with measured coverage distributions rather than
+the simulated coverage sweep. Third, the acquisition component should be
+studied in a fully assisted workflow---draft, verify, and authority-gate in
+one loop---where the interaction of the three stages is itself the
+treatment.

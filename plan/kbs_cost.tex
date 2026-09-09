@@ -1,0 +1,59 @@
+% ============================================================
+% kbs_cost.tex — KBS journal: Acquisition cost (Section 7).
+% Section label: sec:cost. RQ4 (plan). The E4 instrument is built and
+% validated (phase1/scripts/export_cost_study.py, score_cost_study.py);
+% results pending the cataloger panel -> marked \TODO{E4}.
+% Bibliography: kbs_ke_references.bib + paper/references.bib.
+% ============================================================
+
+\section{Cost of Machine- vs.\ Expert-Acquired Knowledge}
+\label{sec:cost}
+
+Validity (Section~\ref{sec:valid}) and utility (Section~\ref{sec:util})
+establish that machine-acquired subject knowledge is useful. Whether a
+knowledge manager should deploy it depends on cost: expert time is the
+scarce resource in knowledge acquisition \cite{feigenbaum_knowledge_engineering},
+and the relevant comparison is not machine-versus-nothing but
+machine-versus-expert for the same knowledge. This section reports the
+design and protocol; results are pending the cataloger panel
+\TODO{E4: report panel results}.
+
+\subsection{Design}
+
+We measure acquisition cost in a counterbalanced panel study
+\TODO{E4}, following the classical framing that knowledge acquisition cost
+is expert time \cite{studer_knowledge_engineering}. Each expert cataloger
+processes 80 records in two conditions: \emph{manual} acquisition---assign
+subject headings and a classification from a sparse record (title, author,
+year), the same input the acquisition component receives---and
+\emph{verification} acquisition---review and edit a machine-proposed
+heading set and classification for a record of the same type. Conditions are
+disjoint within a cataloger and counterbalanced across catalogers; neither
+condition reveals the professional gold. For each record we instrument
+elapsed time and record the final heading set.
+
+Two comparisons come out of this design. \emph{Time}: mean seconds per
+record under manual versus verification acquisition, per cataloger and
+pooled. \emph{Quality}: the final heading sets from both conditions scored
+against validated gold with the multi-level rubric of
+Section~\ref{sec:valid}, so we can ask whether verification saves time at
+no quality cost, or quantify the trade. A secondary measure is the
+\emph{edit rate} in the verification condition---how often the expert
+changed the machine draft---which separates ``the draft was good and the
+expert kept it'' from ``the expert repaired a bad draft'' (the latter being
+hidden cost). The instrument is released and fully scripted
+\TODO{E4: report results; attach the released instrument}.
+
+\subsection{What the design controls}
+
+The comparison is fair by construction on the input side: both conditions
+see the same sparse record, so any time difference is attributable to the
+draft, not to different information. The comparison is deliberately
+conservative on the machine side: the acquisition component is unassisted
+(single model, sparse-record conditioning; multi-model and
+full-text-conditioned variants are reported in Section~\ref{sec:valid}
+\TODO{E3}), so the measured verification time is an upper bound on the
+time an assisted workflow would need. The panel is small (two to three
+catalogers), so per-cataloger results are reported rather than pooled only,
+and the cost function is treated in Section~\ref{sec:synth} as a pilot
+estimate whose sensitivity is explored rather than over-claimed.

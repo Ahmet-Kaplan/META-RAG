@@ -1,0 +1,161 @@
+% ============================================================
+% kbs_util.tex — KBS journal: Downstream utility (Section 6).
+% Section label: sec:util. RQ1 (plan): representation-dependence via
+% field ablation; completeness-dependence via the coverage sweep;
+% robustness. Numbers macro-driven; E1 scale-up marked \TODO.
+% Bibliography: kbs_ke_references.bib + paper/references.bib.
+% ============================================================
+
+\section{Downstream Utility of Acquired Knowledge}
+\label{sec:util}
+
+Acquisition validity (Section~\ref{sec:valid}) answers whether the acquired
+knowledge is correct; utility answers whether a knowledge-based system that
+consumes it performs better. The consuming system is the metadata-aware
+retrieval index (Section~\ref{sec:method:system}); utility is measured as
+retrieval quality, nDCG@10, over the discovery question pool with bootstrap
+confidence intervals and paired permutation tests \cite{ndcg}. We report
+\emph{per representation} (which knowledge field carries the effect) and
+\emph{per completeness} (how the effect depends on how much knowledge the
+base already has), on the full in-corpus question pool
+\TODO{E1: scale to the 1,300-book corpus}.
+
+\subsection{Retrieval gain of acquired knowledge}
+
+Indexing machine-acquired subject knowledge into records that had none
+raises topical retrieval substantially: on the conference-scale corpus,
+the metadata-aware configuration reaches topical nDCG@10 of
+\TopicalMeta{} against \TopicalHybrid{} for the best metadata-blind
+configuration (paired permutation test \TopicalP{}; dense, the strongest
+single metadata-blind mode, reaches \TopicalDense{})
+\TODO{E1: re-verify at scale}. Overall retrieval rises from
+\OverallHybrid{} to \OverallMeta{}. The gain is class-specific: on
+known-item questions the metadata-aware configuration is nominally ahead
+(\KnownMeta{} vs.\ \KnownHybrid{}) but not significantly (\KnownP{}),
+and on bibliographic-fact questions it is significantly \emph{worse}
+(\BibMeta{} vs.\ \BibHybrid{}, \BibP{}), a regression that reproduces on
+the larger build \TODO{E1: report the extended-corpus replication}. The
+utility of acquired knowledge is therefore concentrated in topical
+discovery; we claim nothing for the other classes and recommend routing
+bibliographic-fact queries around the record path.
+
+\subsection{Representation dependence: which knowledge field carries the effect}
+
+The central knowledge-engineering result is \emph{which} representation the
+consuming system uses. We rebuild the record index eight times, varying only
+which knowledge fields enter the record text (authors are always present as
+the identity baseline), with retrieval, generation, and the chunk index
+fixed. Adding subject headings to title is worth \AblSubjGain{} topical
+nDCG@10 (95\% CI \AblSubjCI{}, \AblSubjP{}); adding classification is worth
+\AblDdcGain{} (\AblDdcCI{}, \AblDdcP{})---a confidence interval that does
+not reach a tenth of the subject effect and whose upper end is zero. The
+full index is not better than title-plus-headings on topical questions
+(\AblFullTopical{} vs.\ \AblTitleSubjTopical{}); the classification field
+is, at best, inert for topical discovery. The two fields also serve
+disjoint access modes: subject headings alone reach \AblSubjOnlyTopical{}
+on topical questions but only \AblSubjOnlyKnown{} on known-item, while
+title alone inverts that pattern (\AblTitleOnlyKnown{} known-item,
+\AblTitleOnlyTopical{} topical). Authors alone reach \AblAuthorsTopical{}
+on topical, confirming the topical signal is the acquired knowledge, not
+corpus structure.
+
+Classification has one reliable contribution, and it is an artifact of the
+question class: on bibliographic-fact questions---which ask what class a
+record is filed under---indexing classification is worth
+\AblDdcBibGain{} (\AblDdcBibP{}). That is the system answering questions
+\emph{about} the knowledge, not discovery \emph{by} it. We therefore index
+title, author, and subject headings in the main configuration and exclude
+classification---a decision this ablation licenses rather than assumes.
+
+\subsection{Completeness dependence: how much knowledge the base already has}
+
+Machine-acquired knowledge should matter most where the knowledge base has
+gaps. We measure this directly by varying how many gold-bearing records keep
+their headings and gap-filling every record left without one
+(Section~\ref{sec:method:benchmark}), then reading topical retrieval
+against coverage (conference scale; the sweep is the same construction the
+journal corpus extends \TODO{E1}):
+
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Knowledge-base coverage & no acquisition & gap-filled & gain \\
+\midrule
+0\% & \SpBaseZero{} & \SpEnrZero{} & +\SpGainZero{} \\
+25\% & \SpBaseTwentyFive{} & \SpEnrTwentyFive{} & +\SpGainTwentyFive{} \\
+50\% & \SpBaseFifty{} & \SpEnrFifty{} & +\SpGainFifty{} \\
+75\% & \SpBaseSeventyFive{} & \SpEnrSeventyFive{} & +\SpGainSeventyFive{} \\
+100\% & \SpBaseHundred{} & \SpEnrHundred{} & +\SpGainHundred{} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The gain falls monotonically from +\SpGainZero{} at zero coverage to
++\SpGainHundred{} at full coverage (both columns differ at
+\SpP{}), but never reaches zero: even a fully cataloged collection has
+gaps worth filling. The best knowledge base in this study is neither human
+nor machine alone---gap-filling at full coverage
+(\SpEnrHundred{}) exceeds the professionally cataloged records on their
+own (\SpBaseHundred{}) and exceeds an all-LLM catalog
+\TODO{E1: re-verify loop conditions at scale}. And the benefit concentrates
+exactly where it is needed: records that never received professional
+headings are invisible to topical search until someone writes one, and it
+does not have to be a cataloger.
+
+\subsection{What the acquired knowledge is not: robustness}
+
+Two checks confirm the mechanism is knowledge, not retrieval noise. First,
+corrupting subject headings degrades discovery monotonically: topical
+nDCG@10 falls from \NoiseZeroTopical{} (no corruption) to
+\NoiseHundredTopical{} (100\% corruption, plausible-wrong or missing
+headings), and overall from \NoiseZeroOverall{} to \NoiseHundredOverall{}.
+Known-item drifts slightly \emph{up} under corruption (\NoiseZeroKnown{}
+$\rightarrow$ \NoiseHundredKnown{}) and bibliographic-fact stays flat,
+so the degradation is carried entirely by the subject-knowledge path---the
+same path the field ablation isolates. At 100\% corruption, topical
+retrieval falls \emph{below} the title-only baseline
+(\NoiseHundredTopical{} vs.\ \AblTitleOnlyTopical{}): wrong knowledge is
+worse than no knowledge, the expected ordering, and a cross-check that the
+two experiments agree. Second, we implemented the natural alternative
+retrieval design---fusing full-text chunk rankings into the record ranking
+as a four-way reciprocal-rank fusion---and it is consistently worse for
+discovery (\TopicalMeta{} $\rightarrow$ \FourTopical{} topical;
+\OverallMeta{} $\rightarrow$ \FourOverall{} overall): mixing full-text
+evidence into the record ranking dilutes the subject-knowledge signal that
+topical discovery depends on.
+
+\subsection{Scoring validity: single-gold bias and graded relevance}
+
+Every topical number above is scored against the single record each question
+was generated from, which understates systems that retrieve a relevant
+non-seed record. We bound this with pooled graded relevance: for each
+topical question the top records from all configurations are pooled and
+judged (0/1/2) without knowledge of the seed
+\TODO{E2: extend the judged pool at journal scale}. The pool is genuinely
+multi-relevant---mean \PoolMeanRel{} fully-relevant records per query, with
+\PoolMultiRel{} of \PoolNQueries{} questions having more than one---and the
+effect on system ordering is small, with one exception. The gap-filling
+margin shrinks under graded scoring: on the full topical pool,
+single-gold scoring puts gap-filling +\PoolSingleEnrGain{} ahead of the
+gold-only catalog, and pooled graded judging puts it +\PoolEnrGain{} ahead.
+The direction is unchanged---gap-filling still wins---but the honest effect
+size is smaller than the single-gold headline, and we report both. The
+judgments are LLM-derived and are calibrated against human raters: two
+raters graded a stratified sample of 120 pooled pairs, with human--human
+agreement ($\kappa=0.755$, 3-way) and human--LLM agreement
+($\kappa=0.64$--$0.80$) indicating the judge agrees with a human rater
+about as well as human raters agree with each other
+\TODO{E2: extend calibration to the full journal pool}.
+
+\subsection{Summary}
+
+Downstream utility has three measured properties. It is
+\emph{representation-dependent}: subject headings carry the entire topical
+gain (\AblSubjGain{}, \AblSubjP{}) while classification contributes none
+(\AblDdcGain{}, CI upper end zero), so a knowledge-acquisition budget should
+target the thesaurus representation. It is \emph{completeness-dependent}:
+gain is monotone decreasing in existing coverage and never reaches zero, so
+acquisition is a gap-filling channel whose marginal value a manager can read
+off the coverage curve. And it is \emph{robust to the scoring choice} in
+direction if not in magnitude (+\PoolSingleEnrGain{} single-gold,
++\PoolEnrGain{} graded), with the judge human-calibrated.

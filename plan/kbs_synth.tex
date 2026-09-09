@@ -1,0 +1,83 @@
+% ============================================================
+% kbs_synth.tex — KBS journal: Synthesis / deployment analysis (Section 8).
+% Section label: sec:synth. RQ5 (plan): utility per expert-hour as a
+% function of coverage; break-even. Requires E1 gain curve + E4 cost ->
+% results marked \TODO; the decision-model structure is fixed here.
+% Bibliography: kbs_ke_references.bib + paper/references.bib.
+% ============================================================
+
+\section{Synthesis: Where Machine Acquisition Pays Off}
+\label{sec:synth}
+
+The preceding sections establish three measured functions: acquisition
+validity as a function of representation and model
+(Section~\ref{sec:valid}), downstream utility as a function of
+representation and knowledge-base completeness (Section~\ref{sec:util}),
+and acquisition cost in expert time (Section~\ref{sec:cost}). This section
+combines them into the deployment analysis that motivates the paper: given
+a knowledge base with a known level of subject-knowledge coverage, is
+acquiring the missing knowledge by machine worth the expert time required
+to verify it, and where is the break-even?
+
+\subsection{The decision model}
+
+We express the decision in the units a knowledge manager controls. Let
+$c$ be the current coverage of a knowledge base---the fraction of records
+carrying subject knowledge---and let $G(c)$ be the utility gain from
+gap-filling at coverage $c$, measured as topical retrieval quality
+(Section~\ref{sec:util}: $G(c)$ is decreasing in $c$ and positive
+throughout). Let $t_M$ be expert minutes per record to acquire knowledge
+manually and $t_V$ the minutes to verify a machine draft
+(Section~\ref{sec:cost}), with the verification workflow producing final
+knowledge of quality $q_V$ measured against the same gold as manual
+acquisition of quality $q_M$ (Section~\ref{sec:valid}). The decision
+quantity is \emph{utility per expert-hour}: $G(c) / t_M$ for manual
+acquisition against $G(c) / t_V$ for machine acquisition with
+verification, and the two are equal at the break-even coverage
+$c^{*}$ where the time saving exactly offsets any quality difference.
+
+\subsection{Readings from the measured functions}
+\label{sec:synth:readings}
+
+Three structural results follow from the measured functions
+\TODO{E1+E4: fill numerical values at journal scale}:
+
+\textbf{1. Machine acquisition pays most where coverage is lowest.}
+Because $G(c)$ is monotone decreasing in $c$, the utility per expert-hour
+from gap-filling is largest for sparse knowledge bases regardless of the
+cost side. This is the operational content of the completeness-dependence
+result: the value of the acquisition component is a decreasing function of
+how well the base is already covered, so the rational deployment is
+backlog and thinly cataloged records, not fully cataloged collections.
+
+\textbf{2. The verification workflow dominates when drafts are near-final.}
+If expert verification of a machine draft is faster than manual acquisition
+($t_V < t_M$) at equal final quality ($q_V \approx q_M$), the break-even
+coverage $c^{*}$ is strictly below 100\%: there is always some coverage
+level above which machine-assisted acquisition is the cheaper route to the
+same knowledge. The edit-rate measure in Section~\ref{sec:cost} is the
+empirical witness for ``drafts are near-final''; where editors change most
+drafts substantially, $t_V$ approaches $t_M$ and the advantage narrows
+\TODO{E4}.
+
+\textbf{3. Representation targeting concentrates the budget.}
+Utility is carried by the thesaurus representation and not by the
+hierarchical one (Section~\ref{sec:util}), so $G(c)$ should be computed on
+subject-knowledge coverage, and acquisition effort spent on subject
+headings---not on classification---when the objective is topical discovery.
+Spending acquisition budget on the inert representation buys expert time
+with zero utility return.
+
+\subsection{Caveats on the synthesis}
+
+The synthesis inherits the limits of its inputs. The gain curve $G(c)$ is
+estimated within the studied collections and should not be assumed to
+transfer to collections unlike them (Section~\ref{sec:disc}). The cost
+estimates $t_M, t_V$ rest on a small expert panel and are reported
+per-cataloger with sensitivity analysis rather than as a single pooled
+number \TODO{E4}. And the topical numbers remain upper bounds because the
+question distribution is not fully independent of the knowledge being
+tested (Section~\ref{sec:disc}). Within these bounds, the synthesis turns
+the paper's measurements into an actionable rule: \emph{acquire the missing
+subject knowledge by machine, verify it, and spend the saving where
+coverage is thinnest}.
