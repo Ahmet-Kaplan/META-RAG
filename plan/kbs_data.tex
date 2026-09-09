@@ -1,0 +1,129 @@
+% ============================================================
+% kbs_data.tex — KBS journal Data & corpus section (KE voice).
+% Section label: sec:data (referenced by the Introduction draft).
+% Conference-scale numbers shown; journal extension to a 1,300-book
+% corpus marked \TODO{E1}; panel-validated gold marked \TODO{E2}.
+% Bibliography: kbs_ke_references.bib + paper/references.bib.
+% ============================================================
+
+\section{Data and Ground Truth}
+\label{sec:data}
+
+The knowledge-engineering claims in this paper require a collection in
+which (i) subject knowledge is professionally available for a subset of
+works, (ii) the full text is available so that acquisition can be studied
+with and without content conditioning, and (iii) a second professional
+source exists to quantify inter-source disagreement in the gold itself. We
+build the collection from three open sources, all public-domain or openly
+licensed: Project Gutenberg full text (with LC-derived subject metadata),
+OpenLibrary MARC-derived metadata (title, author, Dewey classification),
+and HathiTrust bibliographic records as a professional cross-check of the
+gold, alongside other open bibliographic
+corpora~\cite{hathitrust_ef, blbooks}. This section describes the corpus, the gold knowledge base, the
+validation of the gold, and the released benchmark instruments.
+
+\subsection{Corpus}
+\label{sec:data:corpus}
+
+The retrieval and acquisition experiments run over a curated collection of
+English-language public-domain books. Works are joined across Gutenberg and
+OpenLibrary by fuzzy title/author matching: of 2{,}000 sampled books,
+1{,}359 (68\%) matched to a work record carrying subject knowledge
+\TODO{E1: scale the corpus from 227 to ~1,300 books; report the final join
+and chunk counts}. For each joined work the collection stores the full
+text, chunked for retrieval (conference scale: 227 books, 88{,}264
+chunks), and the catalog record---identity fields (title, author, year) and
+subject knowledge (headings, classification)---which is the unit the
+acquisition component operates on and the knowledge-based system retrieves.
+
+Two properties of the corpus matter for the knowledge claims. First, the
+works are \emph{well-known public-domain literature}, which bounds the
+memorization concern: a large model may recall the real headings of famous
+works rather than perform knowledge acquisition, so we report a
+popularity-tier analysis that compares acquisition quality across download
+counts to bound recall effects. Second, subject knowledge is
+\emph{unevenly distributed}---not every record carries headings or
+classification---which is exactly the knowledge-base-completeness
+heterogeneity that the paper exploits. Records that carry no subject
+knowledge are the population the acquisition component is asked to fill.
+
+\subsection{Knowledge base and gold}
+\label{sec:data:gold}
+
+The gold knowledge base covers \TODO{E1: extend} records with subject
+knowledge in both target representations:
+
+\textbf{Subject headings (thesaurus).} Ground-truth headings are
+LC-derived Gutenberg subject metadata, i.e., headings in Library of Congress
+Subject Headings form. Every record in the benchmark carries at least one
+gold heading (conference scale: 600 records, 1{,}405 gold headings).
+
+\textbf{Classification (taxonomy).} Ground-truth Dewey numbers come from
+OpenLibrary's aggregated MARC 082 field. Because OpenLibrary aggregates
+editions, a record may carry several valid Dewey numbers; classification
+gold is therefore scored as \emph{any-gold-match} (conference scale: 204 of
+600 records carry gold Dewey).
+
+\subsection{Validating the gold itself}
+\label{sec:data:gold-validation}
+
+The gold must be trustworthy for validation claims, so we cross-check it
+against an independent professional source---HathiTrust MARC---on a
+subsample (conference scale: 102 of 224 pilot books found in HathiTrust; 36
+carried LCSH fields and 19 carried Dewey). The cross-check is
+methodologically decisive for how acquisition quality must be scored:
+where both sources carry Dewey, 17/19 books agree at the 3-digit class
+(89\%), while exact subject-heading agreement between the two professional
+sources is far lower (9 of 34 books share an exact heading; mean recall of
+one source's headings in the other is 15\%). Two professional cataloging
+sources therefore disagree on exact heading form most of the time. The
+multi-level rubric (exact / semantic-equivalence / acceptable) exists
+precisely so that inter-cataloger variation is not scored as acquisition
+error; and the \emph{agreement ceiling}---the rate at which two
+professionals agree---is the correct reference for judging LLM acquisition,
+not exact match \TODO{E2: measure the inter-cataloger agreement ceiling on
+a panel-validated sample and report LLM scores against it}. The HathiTrust
+cross-check also provides the second professional source that motivates the
+decomposition of valid-but-unmatched predicted headings
+(Section~\ref{sec:valid}).
+
+\subsection{Benchmark instruments}
+\label{sec:data:benchmark}
+
+Two released instrument sets operationalize the two sides of the
+knowledge-engineering cycle.
+
+\textbf{Discovery questions (utilization side).} A released set of
+discovery questions \TODO{E1: extend} in three classes---known-item
+(locate a work by title/author), topical (find a work about a subject), and
+bibliographic-fact (report a record field such as headings or class)---each
+with gold answers linked to record identifiers so correctness is verifiable
+by construction. Question wording is LLM-polished into natural patron
+language while gold answers remain frozen. Of the released set,
+\TODO{E1: extend} fall inside the evaluation corpus and form the retrieval
+pool; the topical subset (conference scale: 338 of 1{,}076 in-corpus
+questions) drives the headline claims and is the subject of the
+single-gold-bias analysis in Section~\ref{sec:util}.
+
+\textbf{Cataloging records (validation side).} The gold knowledge base
+above, released with the multi-level scoring protocol, the error taxonomy,
+and live authority checking against \texttt{id.loc.gov}. Authority
+validation is applied as a \emph{measurement} on predicted headings---it
+classifies them into the taxonomy (authority-violating vs.\ valid-but-
+unmatched)---rather than as a gate that filters what is indexed; we do not
+test a gated variant and claim nothing for one.
+
+\subsection{Data provenance and reuse}
+\label{sec:data:provenance}
+
+All sources are open and license-compatible: Project Gutenberg (public
+domain), OpenLibrary (CC0/MARC-derived), HathiTrust public bibliographic
+API, and the Library of Congress authorities via \texttt{id.loc.gov}.
+Corpus construction, joining, and indexing are fully scripted and released;
+every number reported in this paper traces to a committed JSON artifact,
+and the benchmark instruments are released for independent reuse
+\TODO{E1: update released corpus and question counts to the journal scale}.
+No patron or circulation data is used anywhere; institutional review was
+confirmed not to be required for the public-domain collection, and the
+cataloger-panel study follows the protocol in
+Section~\ref{sec:valid} \TODO{E2: attach panel consent/IRB note}.
