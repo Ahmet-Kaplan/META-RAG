@@ -147,7 +147,7 @@ Avoid titles that lead with "cataloging" or "libraries".
 |---|---|---|
 | 1. Introduction | Acquisition bottleneck; three KE questions; contributions | Conference §I rewritten |
 | 2. Related work | KE-cycle organization (acquisition/representation/validation/utilization) + systematic comparison table (tab:rel) | Draft: `plan/kbs_related_work.tex` |
-| 3. Knowledge & system model | The acquisition component; two representations (LCSH, DDC); the consuming KBS (META-RAG index); the benchmark as measurement apparatus | Conference §III reframed |
+| 3. Knowledge & system model | Knowledge being acquired (two representations + completeness); acquisition component; consuming KBS (record index + field ablation); measurement apparatus (two-sided benchmark, multi-level rubric, pooled graded) | Draft: `plan/kbs_method.tex` |
 | 4. Corpus & ground truth | 1,300 documents; professional gold; authority files; HathiTrust cross-check | Conference §III-C + E1 |
 | 5. Validation of acquired knowledge (E2/E3) | Multi-level scoring vs. gold; error taxonomy; agreement ceiling; model/conditioning/representation drivers | Conference RQ4 + new panel/model work |
 | 6. Utility of acquired knowledge (RQ1) | Field ablation (representation dependence); sparsity sweep (completeness dependence); robustness | Conference RQ1/RQ5 + E1 |

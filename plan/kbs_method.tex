@@ -1,0 +1,152 @@
+% ============================================================
+% kbs_method.tex — KBS journal Method (KE voice).
+% Section label: sec:method (referenced by the Introduction draft).
+% Builds on conference Method (paper/main.tex §III); journal extensions
+% (corpus scale, multi-model, panel) are marked \TODO{E?}.
+% Bibliography: kbs_ke_references.bib + paper/references.bib.
+% ============================================================
+
+\section{Method}
+\label{sec:method}
+
+We formalize the paper as a knowledge-engineering study. This section
+defines the knowledge being acquired (Section~\ref{sec:method:knowledge}),
+the acquisition component (Section~\ref{sec:method:acquisition}), the
+knowledge-based system that consumes the knowledge
+(Section~\ref{sec:method:system}), and the measurement apparatus used to
+validate and evaluate it (Section~\ref{sec:method:benchmark}).
+
+\subsection{Knowledge being acquired}
+\label{sec:method:knowledge}
+
+The unit of knowledge is the \emph{catalog record}: a description of a work
+that pairs an identity (title, author, year) with subject knowledge about
+the work. Subject knowledge takes two canonical representations, and we
+study both.
+
+\textbf{Representation 1 --- subject headings (thesaurus).} Subject headings
+(e.g., Library of Congress Subject Headings) are an open, pre-coordinated
+thesaurus: a large, human-curated vocabulary of heading strings that may
+combine facets with subdivision markers (e.g., ``Land tenure -- England --
+History -- To 1500''). New headings are legitimately added over time, and
+different catalogers may assign different but equally valid headings for the
+same work. This makes agreement-based evaluation subtle: two professional
+sources do not agree exactly on every heading
+\TODO{E2: quantify from panel}.
+
+\textbf{Representation 2 --- classification (taxonomy).} Classification
+(e.g., Dewey Decimal Classification) is a closed, hierarchical taxonomy of
+numeric classes with a defined top-level structure and a single canonical
+placement for a work's primary subject. It is more constrained than the
+thesaurus and, as we show in Section~\ref{sec:util}, behaves differently
+when machine-acquired.
+
+A record may carry neither representation (no subject knowledge), one, or
+both. The central quantity of this paper is \emph{knowledge-base
+completeness}: the fraction of records in a collection that carry subject
+knowledge in a given representation. Sparse records---those with no
+headings---are invisible to topical knowledge-based retrieval no matter how
+good the retrieval machinery is; this is the gap the acquisition component
+is asked to fill.
+
+\subsection{Acquisition component}
+\label{sec:method:acquisition}
+
+The acquisition component is an LLM configured to produce subject knowledge
+from a sparse record. It receives only what a minimal record carries
+---title, author, year---and must propose, per record: (i) subject headings
+in LCSH form and (ii) a DDC number. This is the retrospective-conversion
+setting: libraries hold millions of records with no subject knowledge, and
+the question is whether an LLM can acquire it. The model is prompted without
+the gold answer and, in the main condition, without the work's full text;
+a full-text-conditioned variant is studied as an acquisition-lever ablation
+in Section~\ref{sec:valid} \TODO{E3}. We report results for
+\texttt{deepseek-chat} as the primary acquisition model, with
+multi-model replication \TODO{E3} to bound model dependence.
+
+\subsection{Consuming knowledge-based system}
+\label{sec:method:system}
+
+The consuming system is a metadata-aware retrieval index over the catalog:
+the benchmark for whether acquired subject knowledge is \emph{useful} is
+whether indexing it improves retrieval quality. We deliberately keep the
+retrieval machinery standard---a field-weighted BM25F-style ranker
+paired with a dense twin, fused by reciprocal-rank fusion---and claim no
+novelty for it~\cite{bm25f, prf_bm25}; the contribution is the knowledge
+analysis, not a new retriever. Two indexes are built over each collection:
+full-text chunks (dense embeddings plus BM25) and \emph{catalog records} as
+first-class retrieval units (field-boosted BM25 over title, author, and
+subject-heading fields, with subject weight $\times2$, plus dense embeddings
+of the field text). Given a query, records are ranked by RRF over the dense
+and lexical record rankings; full-text chunks are retrieved in parallel and
+used only as generation evidence, not in the record ranking. We evaluate
+four configurations---\texttt{dense}, \texttt{bm25}, \texttt{hybrid}
+(metadata-blind chunk retrieval), and \texttt{meta} (the record-aware
+configuration)---so that the contribution of the subject-knowledge fields is
+isolated by subtraction.
+
+The representation-dependence question is operationalized as a
+\emph{field ablation}: we rebuild the record index varying only which
+knowledge fields enter the record text (authors-only baseline; +title;
++subject headings; +classification), holding retrieval, generation, and the
+chunk index fixed, and score each configuration on the full question pool
+(Section~\ref{sec:util}). This is what lets us attribute downstream utility
+to a specific knowledge representation rather than to ``metadata'' as an
+undifferentiated whole.
+
+\subsection{Measurement apparatus}
+\label{sec:method:benchmark}
+
+Validation and evaluation require ground truth and instruments, released as
+a two-sided benchmark \TODO{E1: extend to 1,300-book corpus}:
+
+\textbf{Discovery questions.} Topical, known-item, and bibliographic-fact
+questions, each with gold answers linked to catalog record identifiers so
+correctness is verifiable by construction. Wording is LLM-polished into
+natural patron language while gold answers remain frozen. Retrieval quality
+is reported as nDCG@10~\cite{ndcg} with bootstrap confidence intervals and
+paired permutation significance tests.
+
+\textbf{Cataloging gold.} Records with subject-heading and classification
+ground truth drawn from LC-derived and MARC-derived professional sources,
+cross-checked against a second professional source (HathiTrust) to quantify
+how much inter-source disagreement is inherent to the task
+\TODO{E2: upgrade to panel-validated gold + agreement ceiling}. Because the
+gold has multiple legitimate forms, acquisition quality is scored with a
+multi-level rubric: \emph{exact}, \emph{semantic equivalence} (a different
+valid heading for the same concept), and \emph{acceptable} (a correct
+broader heading), plus classification top-$k$. Predicted headings that match
+no gold are classified into an error taxonomy---over-specific,
+under-specific, authority-violating (checked live against the LC authority
+file), and valid-but-unmatched---so that ``wrong'' is not conflated with
+``different but valid'' \TODO{E2: decompose with panel}.
+
+\textbf{Relevance judgments.} Single-gold topical scoring is known to
+understate systems that retrieve a relevant non-seed record, so we apply a
+pooled graded relevance check: for each topical question the top records
+from all configurations are pooled and a judge grades each candidate
+(0/1/2) without knowing the seed; configurations are rescored with graded
+nDCG@10. The LLM judge is calibrated against human raters
+\TODO{E2: extend calibration to the full journal pool}.
+
+\textbf{Generative-AI disclosure.} In line with the target venue's policy
+\TODO{cite venue AI policy}, we disclose that \texttt{deepseek-chat} was
+used to polish question wording, to generate experimental answers, and to
+serve as the faithfulness judge; all generated content was programmatically
+validated, and GenAI was not used to fabricate data or as an author.
+
+\subsection{From measures to knowledge-engineering claims}
+\label{sec:method:from-measures}
+
+Three measured quantities support the paper's claims. \emph{Acquisition
+accuracy} (Section~\ref{sec:valid}) is the multi-level agreement of acquired
+knowledge with validated gold, read against an inter-cataloger agreement
+ceiling rather than against exact match. \emph{Downstream utility}
+(Section~\ref{sec:util}) is the retrieval-gain contribution of a knowledge
+field, decomposed by representation (field ablation) and by knowledge-base
+completeness (coverage sweep). \emph{Acquisition cost}
+(Section~\ref{sec:cost}) is expert time to produce the same knowledge from
+scratch versus verifying LLM output \TODO{E4}. Combining utility and cost
+yields the deployment analysis (Section~\ref{sec:synth}): the value of
+machine-acquired knowledge per expert-hour as a function of how complete the
+knowledge base already is.
