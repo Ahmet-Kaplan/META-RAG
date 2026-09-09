@@ -1,0 +1,170 @@
+% ============================================================
+% kbs_related_work.tex — KBS journal Related Work (KE voice) with a
+% systematic comparison table. Section label: sec:rel (referenced by the
+% Introduction draft, kbs_introduction.tex).
+% Bibliography: kbs_ke_references.bib (new, verified) +
+% paper/references.bib (conference refs carried over).
+% ============================================================
+
+\section{Related Work}
+\label{sec:rel}
+
+This section positions the paper in knowledge-engineering terms and then
+compares prior work systematically. We organize the literature around the
+stages of the knowledge-engineering cycle that this paper completes
+---\textit{acquisition}, \textit{representation}, \textit{validation}, and
+\textit{utilization}~\cite{studer_knowledge_engineering}---and place prior
+work on LLM knowledge acquisition and metadata-aware retrieval within those
+stages.
+
+\subsection{Knowledge acquisition: from experts to LLMs}
+
+The cost of acquiring structured knowledge has been the central bottleneck
+of knowledge-based systems since the field's
+origins~\cite{feigenbaum_knowledge_engineering}. Classical acquisition
+relied on knowledge engineers eliciting expert knowledge, a process that is
+slow, expensive, and hard to audit; principled knowledge-engineering
+methodologies were developed to make each step
+explicit~\cite{studer_knowledge_engineering}. Large language models
+have changed the economics of the first step: they can propose structured
+knowledge---ontology instances, graph triples, or metadata---from natural
+language at negligible marginal cost~\cite{ciatto_llm_oracle_kbs,
+pan_llm_kg_roadmap, xu_llm_gen_ie}. Recent surveys position LLMs as a
+general acquisition channel for knowledge
+graphs~\cite{ji_kg_survey, pan_llm_kg_roadmap} and for information
+extraction~\cite{xu_llm_gen_ie}. What these works share is an emphasis on
+\textit{generating} knowledge; validation against an independent gold
+standard, and measurement of the knowledge's effect on a consuming system,
+remain comparatively thin---precisely the stages the classical cycle makes
+mandatory~\cite{studer_knowledge_engineering,
+okeefe_kbs_validation}.
+
+\subsection{Representation: thesaurus vs.\ taxonomy vs.\ ontology}
+
+How acquired knowledge is represented determines what a consuming system can
+do with it. Ontology engineering formalizes this choice, distinguishing
+conceptual, representational, and encoding levels of an
+ontology~\cite{gruber_portable_ontologies}. In the bibliographic domain,
+two mature, professionally maintained representations coexist and are
+directly comparable. \textit{Subject headings} (e.g., Library of Congress
+Subject Headings) are an open, pre-coordinated thesaurus: a large,
+human-curated vocabulary of heading strings that may combine facets (e.g.,
+``Land tenure -- England -- History -- To 1500''). \textit{Classification}
+(e.g., Dewey Decimal Classification) is a closed, hierarchical taxonomy of
+numeric classes. The two differ in structure, in how new knowledge is
+added, and---as we show---in how useful machine-acquired instances of each
+are to a retrieval system. Prior metadata-aware retrieval work weights
+structured fields but does not treat the \textit{type} of representation as
+a variable~\cite{bm25f, prf_bm25}.
+
+\subsection{Validation of machine-acquired knowledge}
+
+The knowledge-validation literature established that agreement with a single
+reference is not validation: expert systems must be checked for
+completeness, consistency, and correctness against independent
+standards~\cite{okeefe_kbs_validation}. Applied to LLMs, this standard is
+rarely met. Studies of LLM subject cataloging report agreement with a
+catalog record---one source---and stop
+there~\cite{holstrom_llm_cataloging, characterising_ai_cataloguing,
+ital_genai_cataloging, dobreski_chatbots_cataloging}. None measures an
+inter-cataloger agreement ceiling (two professionals do not agree exactly on
+every heading), and none checks proposed headings against the authority
+file as part of the scoring protocol. The ``no free lunches'' finding for
+LLM text post-correction---automation quality cannot be assumed and must be
+measured against a proper baseline---applies with equal force to LLM
+knowledge acquisition~\cite{ocr_no_free_lunches}.
+
+\subsection{Utilization: metadata-aware and knowledge-based retrieval}
+
+Retrieval systems that consume structured metadata are the natural test bed
+for acquired knowledge. Fielded retrieval has long exploited weighted
+fields~\cite{bm25f, prf_bm25}, and retrieval-augmented generation (RAG)
+benchmarks standardize document-level evaluation but treat documents as
+flat text~\cite{bergen}; hybrid semantic variants operate at the document
+level as well~\cite{hysemrag}. Library-domain RAG systems adapt retrieval to
+cultural-heritage and academic collections~\cite{folkrag,
+lund_rag_libraries, historical_archives_rag, icadl_ephemeral} or to
+indexing support~\cite{alima, koha_marc21_hitl}. These works establish
+feasibility but leave the central question open: none measures whether
+\textit{machine-acquired} metadata---as opposed to professionally created
+metadata---is good enough to feed the retrieval system, let alone which
+representation of it carries the effect and how the effect depends on how
+much knowledge the base already has.
+
+\subsection{Systematic comparison}
+\label{sec:rel:table}
+
+Table~\ref{tab:rel} contrasts the prior systems along the dimensions of the
+knowledge-engineering cycle: acquisition channel, representation used or
+produced, validation standard, whether downstream utility in a consuming
+system is measured, and whether a released benchmark accompanies the work.
+Entries are characterized from the papers' own abstracts and, where the
+full text was available, their reported evaluation.
+
+\begin{table*}[t]
+\centering
+\caption{Related systems positioned across the knowledge-engineering
+cycle. $\checkmark$ = addressed; $\times$ = not addressed; $\circ$ =
+partially/addressed incidentally. Rows are characterized from the cited
+papers' reported scope; where a paper does not state a dimension we mark it
+$\times$ rather than infer it.}
+\label{tab:rel}
+\begin{tabular}{lp{2.6cm}p{2.2cm}p{2.6cm}p{2.4cm}p{1.4cm}}
+\toprule
+Work & Acquisition channel & Representation & Validation standard &
+Downstream utility measured & Released benchmark \\
+\midrule
+BERGEN~\cite{bergen} & $\times$ (uses existing docs) & flat text &
+retrieval QA & retrieval nDCG & $\checkmark$ \\
+HySemRAG~\cite{hysemrag} & $\times$ & flat text & QA-style &
+literature-synthesis & $\times$ \\
+FolkRAG~\cite{folkrag} & $\times$ & flat text + heritage metadata &
+none stated & demonstration & $\times$ \\
+Lund et al.~\cite{lund_rag_libraries} & $\times$ & library metadata &
+none stated & feasibility analysis & $\times$ \\
+ALIMA~\cite{alima} & LLM (indexing drafts) & GND thesaurus / DDC &
+single-source (GND) & none stated & $\times$ \\
+ChatGPT/Copilot
+cataloging~\cite{holstrom_llm_cataloging} & LLM & LCSH/Sears, LCC &
+single-source agreement & $\times$ & $\times$ \\
+AI chatbot
+cataloging~\cite{dobreski_chatbots_cataloging} & LLM & subject headings &
+single-source agreement & $\times$ & $\times$ \\
+GenAI cataloging
+pilot~\cite{ital_genai_cataloging} & 4 LLMs & descriptive metadata
+(RDA/MARC) & human review (small set) & $\times$ & $\times$ \\
+Koha MARC21
+HITL~\cite{koha_marc21_hitl} & LLM + human-in-loop & MARC 21 &
+human review & $\times$ & $\times$ \\
+Characterising AI
+cataloguing~\cite{characterising_ai_cataloguing} & LLMs &
+LCSH/classification & single-source agreement & $\times$ & $\times$ \\
+LLM ontology
+oracles~\cite{ciatto_llm_oracle_kbs} & LLM & ontology instances &
+gold ontology & $\times$ (no retrieval) & $\times$ \\
+\textbf{Ours} & \textbf{LLM} & \textbf{LCSH (thesaurus) + DDC (taxonomy)}
+& \textbf{multi-level, authority-checked, agreement ceiling
+\TODO{E2}} & \textbf{retrieval nDCG by representation and coverage}
+& \textbf{$\checkmark$} \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+The comparison makes the gap explicit. On the acquisition side, LLM
+cataloging studies validate against a single source
+~\cite{holstrom_llm_cataloging, characterising_ai_cataloguing,
+dobreski_chatbots_cataloging, ital_genai_cataloging} or propose
+human-in-the-loop workflows~\cite{koha_marc21_hitl}, but none completes the
+cycle: no multi-level rubric against independent gold, no authority-file
+check in the scoring protocol, and no measurement of what the acquired
+knowledge does to a retrieval system. On the utilization side, metadata-aware
+retrieval work~\cite{bm25f, prf_bm25, bergen, hysemrag, folkrag,
+lund_rag_libraries, alima} consumes metadata as given and never treats
+machine acquisition as the variable. The one work closest to ours in method,
+LLMs as oracles for ontology instantiation~\cite{ciatto_llm_oracle_kbs},
+validates against gold ontology instances but does not measure downstream
+utility in a consuming system. Ours is the only study, to our knowledge,
+that carries LLM-acquired subject knowledge through all four stages---from
+acquisition, through representation and validation, to measured utility in a
+knowledge-based retrieval system---and reports the result as a function of
+the representation and of knowledge-base completeness.
