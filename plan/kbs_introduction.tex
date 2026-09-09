@@ -1,0 +1,132 @@
+% ============================================================
+% kbs_introduction.tex — KBS journal Introduction (KE-emphasized draft).
+% Bibliography keys: kbs_ke_references.bib (new, verified) +
+% paper/references.bib (conference refs carried over).
+% Numbers marked [E1/E2/E4 update] are placeholders pending the journal
+% experiments in plan/extended_journal_paper.md; the conference-scale
+% values are shown for continuity.
+% ============================================================
+
+\section{Introduction}
+\label{sec:intro}
+
+Knowledge-based systems inherit their competence from the knowledge they
+acquire, and the cost of that acquisition is the field's oldest
+bottleneck~\cite{feigenbaum_knowledge_engineering}. Whether the knowledge
+encodes clinical practice, engineering diagnosis, or the subject of a
+document, it must be elicited, represented in a vocabulary the system can
+use, and validated before it can be trusted to drive inference. The
+classical knowledge-engineering cycle makes this explicit: acquire, model,
+validate, and deploy, with each step auditable~\cite{studer_knowledge_engineering}.
+What has changed is the acquisition channel. Large language models (LLMs)
+can now propose structured knowledge from minimal input at negligible
+marginal cost, and a fast-growing literature shows them populating
+ontologies and knowledge graphs from text~\cite{ciatto_llm_oracle_kbs,
+pan_llm_kg_roadmap, ji_kg_survey, xu_llm_gen_ie}. Yet the knowledge
+engineering of LLM-acquired knowledge has not kept pace with the acquisition
+itself. The literature measures how often an LLM matches a single reference
+answer, or how well it extracts triples, but rarely asks the three questions
+that decide whether machine-acquired knowledge should be deployed at all:
+\textit{Is it valid against professional consensus rather than one
+reference? Which representation of it does the consuming system actually
+use? And what is it worth given how complete the knowledge base already
+is?}
+
+We answer these questions in a domain where all three can be measured
+against professional ground truth: bibliographic subject knowledge. A library
+catalog describes what each work is about through two canonical knowledge
+representations: subject headings---an open, pre-coordinated thesaurus
+vocabulary (Library of Congress Subject Headings, LCSH)---and
+classification---a closed, hierarchical taxonomy (Dewey Decimal
+Classification, DDC). Both are produced professionally, both are validated
+against national authority files, and both are consumed by retrieval systems
+whose quality is measurable. The domain is therefore a controlled laboratory
+for a general knowledge-engineering question: \emph{when an LLM acquires
+subject knowledge, is that knowledge valid, which representation carries its
+utility, and where does it pay off?}
+
+Prior work on LLMs and bibliographic knowledge stops one step short of this
+question on each side. Cataloging studies show that chatbots and LLMs can
+draft headings and call numbers with varying agreement against a catalog
+record~\cite{holstrom_llm_cataloging, characterising_ai_cataloguing,
+ital_genai_cataloging, dobreski_chatbots_cataloging}, but evaluation is
+single-model, single-source, and stops at agreement---the very weakness the
+knowledge-validation literature warns
+about~\cite{okeefe_kbs_validation}. On the retrieval side, metadata-aware
+and retrieval-augmented systems demonstrate that structured metadata
+improves discovery~\cite{bm25f, folkrag, bergen, lund_rag_libraries}, but
+they consume metadata as given; they never ask whether machine-acquired
+metadata is good enough to consume. The two literatures do not meet: one
+measures acquisition without a downstream system, the other uses a system
+without measuring acquisition. In knowledge-engineering terms, neither
+completes the acquire--validate--utilize cycle that
+Studer~et~al.~\cite{studer_knowledge_engineering} describe as the discipline
+of the field, and neither prices the machine-acquired knowledge against the
+expert knowledge it supplements~\cite{gruber_portable_ontologies}.
+
+This paper closes that gap. We treat an LLM as an automated
+knowledge-acquisition component operating in the retrospective-conversion
+setting---proposing subject headings and classification from a sparse record
+(title, author, year)---and carry its output through the full cycle:
+validation against multi-level professional gold with live authority
+checking, and utility measurement in the consuming system, a
+metadata-aware retrieval index. Using a corpus of \TODO{E1: 1,300} books
+with professionally validated ground truth and a released two-sided
+benchmark, we contribute:
+
+\begin{enumerate}
+\item \textbf{A complete acquisition-to-utilization evaluation protocol.}
+  LLM-acquired subject knowledge is validated against professional gold at
+  three levels (exact, semantic-equivalence, acceptable), checked against
+  the Library of Congress authority file, and measured by its effect on the
+  consuming retrieval system---so acquisition quality is reported as
+  \emph{what it does to the system that uses it}, not as isolated
+  agreement.
+\item \textbf{Representation-dependent utility.} The same acquisition
+  channel is evaluated on two knowledge representations. The open,
+  pre-coordinated thesaurus representation carries the entire downstream
+  retrieval gain (subject headings: $+0.382$ topical nDCG@10, 95\% CI
+  $[+0.333,+0.431]$ at conference scale \TODO{E1 update}); the closed,
+  hierarchical classification contributes none ($-0.005$, CI
+  $[-0.011,+0.000]$). This is a result about \emph{which representation of
+  machine-acquired knowledge a retrieval task consumes}, with implications
+  that outlive the library setting.
+\item \textbf{Completeness-dependent value.} The utility of
+  machine-acquired knowledge is largest exactly where the knowledge base
+  has gaps: retrieval gain from acquisition falls monotonically as existing
+  subject coverage rises, but never reaches zero. Machine-acquired knowledge
+  is a gap-filling channel, not a replacement for expert knowledge---and the
+  answer to ``which knowledge to acquire first'' is read off the coverage
+  curve.
+\item \textbf{Validated acquisition accuracy.} Scored against professional
+  gold \emph{and} an inter-cataloger agreement ceiling
+  \TODO{E2: panel}, with a full knowledge-quality error taxonomy
+  (invented, over-specific, under-specific, authority-violating, and
+  valid-but-unmatched headings) and a decomposition of the residual
+  \TODO{E2}.
+\item \textbf{Cost of machine- vs.\ expert-acquired knowledge.} Expert time
+  to acquire the same knowledge from scratch versus verifying the LLM
+  output \TODO{E4: panel}, so the utility numbers can be read against what
+  acquisition actually costs.
+\end{enumerate}
+
+Our results are domain-specific in their data and general in their
+mechanism. The measured conclusion is that an LLM can act as a
+\textit{gap-filling knowledge-acquisition component}: its subject knowledge
+is validated as operating near the human agreement ceiling
+\TODO{E2: panel + calibration}, its utility is carried by the
+representation the consuming system actually uses, and its value
+concentrates in the low-completeness regime where expert knowledge is
+missing. For knowledge-based systems beyond libraries, the transferable
+claim is the method and the two regularities---representation dependence and
+completeness dependence---rather than any library-specific number.
+
+The remainder of the paper is organized as follows. Section~\ref{sec:rel}
+positions this work within knowledge engineering and metadata-aware
+retrieval. Section~\ref{sec:method} describes the acquisition component, the
+two knowledge representations, and the measurement apparatus.
+Section~\ref{sec:data} details the corpus and validated ground truth.
+Sections~\ref{sec:valid}--\ref{sec:util} report acquisition validity and
+downstream utility respectively. Section~\ref{sec:cost} reports acquisition
+cost, Section~\ref{sec:synth} synthesizes the deployment analysis, and
+Section~\ref{sec:disc} discusses limitations and generality.
