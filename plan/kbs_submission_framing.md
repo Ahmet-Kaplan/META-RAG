@@ -1,6 +1,6 @@
-# KBS Submission Framing — Knowledge-Based Systems (Elsevier)
+# KBS Submission Framing — Knowledge Engineering Emphasis
 
-**Date:** 2026-09-05
+**Date:** 2026-09-05 (rev. 2 — knowledge-engineering framing emphasized)
 **Source material:** AIDL 2026 conference paper (*Filling the Gaps: When LLM
 Cataloging Improves Library Discovery*, `paper/main.tex`, 8 pp.) + the
 retargeted extension plan (`plan/extended_journal_paper.md`).
@@ -10,155 +10,184 @@ Clarivate Master Journal List and the [KBS guide for authors](https://www.scienc
 
 ---
 
-## 1. How to see this paper the way KBS sees it
+## 1. The knowledge-engineering view of this paper
 
-KBS publishes research on **knowledge-based systems**: knowledge acquisition,
-representation, reasoning, and the systems that use knowledge to perform
-tasks. KBS reviewers are AI/knowledge-engineering readers, and they will ask
-three questions your conference version does not answer:
+KBS publishes knowledge-based systems research: how knowledge is **acquired,
+represented, validated, and used** by systems that perform tasks. Read that
+way, this paper is a knowledge-engineering study whose application domain is
+library discovery. Every component of the work is already a KE artifact; the
+task of the journal version is to say so in KE vocabulary and to generalize the
+results beyond the library.
 
-1. **What is the knowledge system?** — The LLM is a *knowledge-acquisition
-   component* that turns sparse bibliographic records into structured subject
-   knowledge (LCSH) and classification (DDC); the consuming system is a
-   metadata-aware retrieval index.
-2. **What does the paper contribute to knowledge engineering?** — A measured
-   account of what LLM-acquired knowledge is *worth*: its acquisition
-   accuracy (vs. professional gold), its utility to a downstream system
-   (retrieval gain, decomposed by knowledge field and coverage), and its cost.
-3. **Why is the evidence credible?** — Validated professional gold,
-   inter-cataloger agreement ceiling, human-calibrated relevance judgments,
-   released code/benchmark/data.
-
-The library/discovery machinery is the **application domain**; the
-**contribution is the knowledge-acquisition analysis**.
-
----
-
-## 2. Working title options
-
-1. *Knowledge Acquisition by LLMs for Library Discovery: What Machine-Acquired
-   Subject Metadata Is Worth to a Retrieval Index* (mechanism-led; KBS voice)
-2. *When Is Machine-Acquired Subject Knowledge Useful? An Analysis of
-   LLM-Generated Metadata for Knowledge-Based Retrieval* (question-led)
-3. *Acquiring Catalog Knowledge with LLMs: Accuracy, Downstream Utility, and
-   Cost of Machine-Generated Subject Metadata* (three-part; matches the
-   RQ2/RQ1/RQ4 structure)
-
-Recommendation: **#1 or #3**. Avoid the passive "When LLM Cataloging
-Improves…"; name the acquisition mechanism and its utility.
-
----
-
-## 3. Abstract (target 200–250 words) — draft
-
-> Knowledge-based retrieval depends on structured metadata that describes what
-> a document is about, and for library collections that metadata is expensive
-> and unevenly distributed: many records carry no subject knowledge at all.
-> Large language models (LLMs) can draft such metadata cheaply, but the
-> knowledge-engineering question is whether machine-acquired subject knowledge
-> is accurate enough and useful enough to justify acquiring it. We answer that
-> question with an end-to-end analysis of LLM-based knowledge acquisition for
-> library discovery. Using a corpus of 1,300 public-domain books and a
-> released two-sided benchmark, we (i) show that LLM-acquired subject headings
-> measurably improve a metadata-aware retrieval index, and that the utility of
-> the acquired knowledge is largest where existing knowledge coverage is
-> thinnest — the gap-filling regime — and never reaches zero; (ii) decompose
-> the effect by knowledge type, finding that thesaurus-style subject headings
-> carry the entire retrieval gain while hierarchical classification
-> contributes none, and explain the mechanism (open pre-coordinated headings
-> vs. closed hierarchical classes); (iii) calibrate acquisition accuracy
-> against validated professional gold and an inter-cataloger agreement
-> ceiling, showing the LLM operates near the human agreement bound; and (iv)
-> measure the cost of acquisition — expert time drafting metadata from scratch
-> versus verifying LLM output. We synthesize these into a decision analysis:
-> expected retrieval-gain per expert-hour as a function of a collection's
-> coverage. Code, benchmark, and data are released for reuse.
-
----
-
-## 4. Contribution list (KBS-framed)
-
-1. **Knowledge-acquisition analysis (the paper's spine):** a measured account
-   of LLM-acquired bibliographic knowledge — its accuracy, its downstream
-   utility decomposed by knowledge type and coverage, and its cost — rather
-   than a single quality number.
-2. **Utility-by-field decomposition (RQ1 + field ablation):** which knowledge
-   field a retrieval system actually consumes (subject headings carry +0.382
-   topical nDCG@10 with CI [+0.333, +0.431]; DDC contributes ≈0), giving a
-   knowledge-engineering reason to spend acquisition effort where it matters.
-3. **Calibrated acquisition accuracy (RQ2–RQ3):** LLM knowledge acquisition
-   scored against validated professional gold *and* an inter-cataloger
-   agreement ceiling; plus a drivers analysis (model, conditioning, knowledge
-   type) that explains the thesaurus/classification gap mechanistically.
-4. **Cost of machine- vs. expert-acquired knowledge (RQ4):** expert minutes
-   per record, drafting vs. verifying LLM output, from a counterbalanced
-   panel study.
-5. **Open artifacts:** code, benchmark, data, protocols, human relevance
-   judgments, and judge calibration released.
-
----
-
-## 5. Positioning paragraph (draft for Introduction)
-
-> Knowledge-based systems are only as good as the knowledge they acquire, and
-> acquiring structured knowledge about documents — what each one is about —
-> remains a bottleneck in knowledge-based retrieval. Large language models now
-> offer a cheap acquisition channel: they can propose subject knowledge from
-> almost no input. But the knowledge-engineering literature evaluates such
-> acquisition either in isolation (agreement against a single reference
-> source) or not at all, and never measures whether the acquired knowledge
-> improves the system that consumes it, which fields of the knowledge are
-> load-bearing, or what acquisition costs relative to expert effort. This
-> paper supplies that missing analysis for a concrete knowledge domain —
-> bibliographic subject metadata — where professional knowledge is sparse,
-> expensive, and unevenly distributed.
-
----
-
-## 6. Structure map: conference paper → KBS manuscript
-
-| KBS manuscript section | Content | Source |
+| KE problem class | What the paper does | Paper element |
 |---|---|---|
-| 1. Introduction | Knowledge-acquisition framing; gap; contributions | Conference §I rewritten |
-| 2. Related work | Knowledge acquisition + LLM, metadata-aware retrieval, cataloging gold; position | Conference §II rewritten + comparison table |
-| 3. System & knowledge model | META-RAG as knowledge-based retriever; LIBRA-Eval as the measurement apparatus; the acquisition component | Conference §III reframed |
-| 4. Data & corpus | 1,300-book corpus, join, gold sources, HathiTrust cross-check | Conference §III-C + E1 |
-| 5. Acquisition accuracy (RQ2/RQ3) | Panel-validated gold; agreement ceiling; model/conditioning/knowledge-type drivers | Conference RQ4 + new |
-| 6. Downstream utility (RQ1) | Gain-vs-coverage at scale; field ablation; robustness | Conference RQ1/RQ5 + E1 |
-| 7. Cost of acquisition (RQ4) | E4 panel results: time/edits/quality | New (instrument ready) |
-| 8. Synthesis & decision analysis (RQ5) | Utility per expert-hour vs. coverage; break-even | **New** |
-| 9. Discussion & limitations | Generalization, query-realism bound, implications | Conference Conclusion expanded |
+| **Knowledge acquisition** | An LLM acquires subject knowledge (LCSH headings, DDC classes) from sparse input (title/author/year), in the retrospective-conversion setting | LIBRA-CAT generation (RQ2/RQ4 in conference terms) |
+| **Knowledge representation** | Two canonical representations compared: pre-coordinated thesaurus strings (LCSH) vs. a closed hierarchical taxonomy (DDC) | Vocabulary-type comparison — LCSH exact 34.2% vs. DDC 3-digit 82.8% |
+| **Knowledge validation** | Acquired knowledge checked against professional gold, multi-level (exact/semantic/acceptable), live authority checking (id.loc.gov), and an inter-cataloger agreement ceiling | LIBRA-CAT scoring + error taxonomy + panel (E2) |
+| **Knowledge utilization in a KBS** | A consuming knowledge-based system (metadata-aware retrieval index) is the test of knowledge utility: which knowledge fields it consumes, how utility varies with knowledge-base completeness | Field ablation (+0.382 topical nDCG@10 for subjects, DDC ≈ 0), sparsity sweep (RQ1/RQ5) |
+| **Knowledge-base completeness** | Utility of adding missing knowledge where the KB has gaps — the gain is largest at lowest coverage and never reaches zero | Gap-filling / sparsity results |
+| **Knowledge quality taxonomy** | Acquired knowledge classified into error types (invented, over-/under-specific, authority violations, valid-but-unmatched) and a decomposition of the residual | Error taxonomy + unmatched-heading decomposition |
 
-Length target: 8,000–12,000 words. ≥30% new material is satisfied by E1
-scaling, the panel studies (E2/E4), the drivers ablation (E3), the
-authority-sourced queries (§5), and the synthesis.
-
----
-
-## 7. What KBS reviewers will probe (prepare for these)
-
-1. **Knowledge-engineering relevance:** "What does this teach us about
-   acquiring knowledge with LLMs, beyond one library application?" — answer
-   in the intro and discussion: the field-decomposition result
-   (thesaurus vs. classification) is the generalizable claim.
-2. **Single-model objection:** deepseek-chat alone is insufficient — the E3
-   model comparison is mandatory, not optional.
-3. **Gold validity:** one source of gold is not enough — the panel agreement
-   ceiling (E2) is the fix; the HathiTrust cross-check helps.
-4. **Query realism:** the paraphrase threat (§5 of plan) — authority-sourced
-   queries; a KBS reviewer will spot the circularity immediately.
-5. **Relevance-judge credibility:** answered by the human-calibration pilot
-   (κ human–LLM 0.64–0.80 vs human–human 0.755); extend to the new queries.
-6. **Baseline fairness:** retrieval components are deliberately standard —
-   state this explicitly so the contribution is read as the knowledge
-   analysis, not a new retriever.
+**The one-line KE claim:** *LLM-generated subject knowledge is a viable
+acquisition channel for a knowledge-based retrieval system, but its utility is
+representation-dependent and coverage-dependent — the open, pre-coordinated
+thesaurus representation carries the entire downstream effect, the closed
+hierarchical classification carries none, and the value concentrates in the
+low-completeness regime.*
 
 ---
 
-## 8. First actions (checklist)
+## 2. Working titles (knowledge-engineering led)
+
+1. *Knowledge Acquisition by LLMs: The Value of Machine-Acquired Subject
+   Knowledge for Knowledge-Based Retrieval* (KE-generic; library is the testbed)
+2. *Acquiring, Validating, and Deploying LLM-Generated Knowledge in a
+   Knowledge-Based Retrieval System: A Subject-Headings Case Study*
+3. *What Is Acquired Knowledge Worth? A Knowledge-Engineering Study of
+   LLM-Acquired Subject Metadata for Retrieval*
+4. *LLMs as Knowledge-Acquisition Components: Representation-Dependent Utility
+   of Machine-Acquired Subject Knowledge*
+
+Recommendation: **#1** (generalizes, leads with the KE construct) with #4 as a
+strong alternative that foregrounds the representation-dependence finding.
+Avoid titles that lead with "cataloging" or "libraries".
+
+---
+
+## 3. Abstract (target 200–250 words) — KE-emphasized draft
+
+> Knowledge-based systems depend on knowledge that is expensive to acquire and
+> unevenly distributed: in knowledge-based retrieval, the structured subject
+> knowledge that describes what documents are about is missing for many
+> documents. Large language models (LLMs) promise a cheap acquisition channel —
+> they can propose subject knowledge from minimal input — but the
+> knowledge-engineering questions are whether the acquired knowledge is valid,
+> which representation of it a consuming system actually uses, and what
+> acquisition costs. We study these questions in a controlled corpus of 1,300
+> documents with professionally validated ground truth and a released two-sided
+> benchmark. An LLM knowledge-acquisition component produces subject knowledge
+> in two canonical representations — open, pre-coordinated thesaurus strings
+> (LCSH headings) and a closed hierarchical classification (DDC). We evaluate
+> acquisition validity against professional gold with a multi-level rubric and
+> live authority checking, and we evaluate knowledge utility by feeding the
+> acquired knowledge into a knowledge-based retrieval index and measuring
+> retrieval quality as a function of representation and knowledge-base
+> completeness. Three findings. First, the utility of machine-acquired subject
+> knowledge is representation-dependent: the thesaurus representation carries
+> the entire downstream gain (+0.382 topical nDCG@10; 95% CI [+0.333, +0.431])
+> while the hierarchical classification contributes none, and we explain the
+> mechanism (open vs. closed vocabularies). Second, utility is
+> completeness-dependent: the gain is largest where the knowledge base is
+> sparsest and never reaches zero. Third, acquisition validity is close to the
+> human agreement ceiling when measured against validated professional
+> knowledge. We close with a cost analysis of machine- vs. expert-acquired
+> knowledge and a deployment analysis for knowledge managers. Code, benchmark,
+> and data are released.
+
+---
+
+## 4. Contribution list — each mapped to a KE contribution
+
+1. **A complete acquisition-to-utilization evaluation protocol (KE
+   methodology):** LLM-acquired knowledge is taken through the full KE cycle —
+   acquire from sparse input, validate against multi-level professional gold
+   with live authority checking, and measure utility in a consuming KBS — so
+   acquisition quality is reported as *what it does to the system that uses
+   it*, not as isolated agreement.
+2. **Representation-dependent utility (KE finding, generalizable):** the same
+   acquisition channel evaluated on two knowledge representations shows that
+   downstream utility is carried entirely by the open pre-coordinated thesaurus
+   representation (subjects: +0.382 topical nDCG@10, CI [+0.333, +0.431]) and
+   not at all by the closed hierarchical one (DDC: −0.005, CI [−0.011,
+   +0.000]) — a result about *which knowledge representation to acquire for a
+   retrieval task*, with implications beyond libraries.
+3. **Completeness-dependent value (KE finding):** machine-acquired knowledge is
+   most valuable exactly where the knowledge base has gaps — utility falls
+   monotonically with coverage but never reaches zero — giving a
+   principled answer to "which knowledge to acquire first."
+4. **Validated acquisition accuracy (KE validation):** LLM-acquired subject
+   knowledge scored against validated professional gold and an inter-cataloger
+   agreement ceiling, with a full knowledge-quality error taxonomy
+   (invented / over- / under-specific / authority-violating / valid-but-
+   unmatched) and a decomposition of the residual.
+5. **Cost of machine- vs. expert-acquired knowledge (KE economics):** expert
+   time to acquire the same knowledge from scratch vs. verifying the LLM
+   output, from a counterbalanced panel study.
+6. **Open artifacts:** code, benchmark, data, and protocols released, with
+   human-calibrated relevance judgments.
+
+---
+
+## 5. Positioning paragraph (KE voice, for the Introduction)
+
+> The knowledge-acquisition bottleneck is the classic obstacle of
+> knowledge-based systems: the knowledge that lets a system perform a task is
+> costly and slow for experts to encode. Large language models offer a new
+> acquisition channel, but the knowledge-engineering literature evaluates
+> machine-acquired knowledge in isolation — agreement against a single
+> reference — or not at all. Three questions go unanswered. Is the acquired
+> knowledge valid against professional consensus, not one source? Which
+> knowledge representation does the consuming system actually use, so that
+> acquisition effort targets the load-bearing representation? And what is the
+> knowledge worth as a function of how complete the knowledge base already is?
+> We answer all three in a controlled setting: an LLM acquires subject
+> knowledge for 1,300 documents, we validate it against professional gold with
+> an agreement ceiling, and we measure its utility in a knowledge-based
+> retrieval index that consumes it. The domain is bibliographic subject
+> knowledge — sparse, expensive, and unevenly distributed — but the object of
+> study is the acquisition channel itself: whether LLM-acquired knowledge can
+> be validated, which representation carries its utility, and where it pays
+> off.
+
+---
+
+## 6. Structure map (KE-emphasized manuscript)
+
+| Section | KE content | Source |
+|---|---|---|
+| 1. Introduction | Acquisition bottleneck; three KE questions; contributions | Conference §I rewritten |
+| 2. Related work | KE: acquisition, representation (thesaurus vs. taxonomy), validation, KB completeness; LLM-as-acquisition; metadata-aware retrieval | Conference §II rewritten + comparison table |
+| 3. Knowledge & system model | The acquisition component; two representations (LCSH, DDC); the consuming KBS (META-RAG index); the benchmark as measurement apparatus | Conference §III reframed |
+| 4. Corpus & ground truth | 1,300 documents; professional gold; authority files; HathiTrust cross-check | Conference §III-C + E1 |
+| 5. Validation of acquired knowledge (E2/E3) | Multi-level scoring vs. gold; error taxonomy; agreement ceiling; model/conditioning/representation drivers | Conference RQ4 + new panel/model work |
+| 6. Utility of acquired knowledge (RQ1) | Field ablation (representation dependence); sparsity sweep (completeness dependence); robustness | Conference RQ1/RQ5 + E1 |
+| 7. Cost of acquisition (RQ4) | Expert time from scratch vs. verifying LLM output; edits; quality | E4 instrument (ready) |
+| 8. Deployment analysis (RQ5) | Utility per expert-hour vs. coverage; break-even; sensitivity | New |
+| 9. Discussion | Generalization: what this says about LLM knowledge acquisition beyond libraries; limits | Conference Conclusion expanded |
+
+---
+
+## 7. What KBS reviewers will probe
+
+1. **"Why is this knowledge engineering, not library science?"** — every result
+   must be stated at the KE level (representation dependence, completeness
+   dependence, validation against consensus) with the library as the case.
+2. **The representation-dependence claim** is the generalizable jewel — defend
+   it as the headline, with the mechanistic explanation (open pre-coordinated
+   vs. closed hierarchical vocabularies) rather than as an aside.
+3. **Single-model objection** — deepseek-chat alone is insufficient; E3 model
+   comparison mandatory.
+4. **Gold validity** — one source of gold is not enough; panel agreement
+   ceiling (E2) + HathiTrust cross-check are the fix.
+5. **Query circularity** — topical queries paraphrased from the same headings
+   being tested; authority-sourced queries (§5 of plan) required.
+6. **Relevance-judge credibility** — human-calibration pilot (κ human–LLM
+   0.64–0.80 vs human–human 0.755) reported; extend to new queries.
+7. **Baseline honesty** — retrieval machinery deliberately standard (BM25F +
+   dense twin + RRF); the contribution is the knowledge analysis, not a new
+   retriever.
+8. **KE literature engagement** — cite the acquisition-bottleneck, ontology /
+   thesaurus-representation, and knowledge-validation literatures properly
+   (verify every reference programmatically before submission).
+
+---
+
+## 8. First actions
 
 - [ ] Verify KBS SCIE status + current JIF on the Clarivate Master Journal List
 - [ ] Read the [KBS guide for authors](https://www.sciencedirect.com/journal/knowledge-based-systems/publish/guide-for-authors)
-- [ ] Start cataloger-panel recruitment (`phase1/outreach_catalogers.md`; E4 instrument ready)
-- [ ] Choose title (#1 or #3) and lock the knowledge-acquisition framing
-- [ ] Begin E1 corpus scale-up and E3 model comparison (compute/API)
+- [ ] Lock title (#1 or #4) and the KE contribution statements (§4)
+- [ ] Run the KE-literature citation pass (acquisition bottleneck, representation,
+      validation, KB completeness) — verify all references
+- [ ] Start cataloger-panel recruitment (`phase1/outreach_catalogers.md`; E4
+      instrument ready) and E3 model comparison

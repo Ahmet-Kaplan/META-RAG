@@ -42,17 +42,23 @@ reliably acquire from a sparse record, which knowledge fields does a downstream
 system actually use, and can the acquired knowledge be trusted against
 professional judgment?**
 
-**KBS framing:** treat the LLM as an automated knowledge-acquisition component
-whose output (LCSH subject knowledge + DDC classification) is *evaluated by its
-effect on a consuming knowledge-based system* (the metadata-aware retrieval
-index), decomposed by knowledge field (subject headings vs. classification),
-calibrated against validated professional gold, and analyzed for cost. That is
-a knowledge-systems contribution — a measured account of what LLM-acquired
-bibliographic knowledge is worth — not a cataloging anecdote.
+**KBS framing (knowledge-engineering emphasis):** treat the LLM as an
+automated **knowledge-acquisition component** whose output (LCSH subject
+knowledge + DDC classification) is carried through the full KE cycle —
+acquisition from sparse input, validation against professional gold (with an
+inter-cataloger agreement ceiling and live authority checking), and utility
+measurement in the consuming knowledge-based system (the metadata-aware
+retrieval index). The two knowledge representations under study (open,
+pre-coordinated thesaurus strings vs. closed hierarchical classification) let
+the paper ask the KE question *which representation of acquired knowledge a
+downstream system actually uses*; the sparsity sweep asks *how value depends
+on knowledge-base completeness*; the cost study (E4) prices machine- vs.
+expert-acquired knowledge. The library is the case study; the object of study
+is the acquisition channel itself.
 
-Working title (KBS orientation): *"Knowledge Acquisition by LLMs for Library
-Discovery: What Machine-Acquired Subject Metadata Is Worth to a Retrieval
-Index."* Alternatives in `plan/kbs_submission_framing.md`.
+Working titles (KE-led) in `plan/kbs_submission_framing.md`; recommended:
+*"Knowledge Acquisition by LLMs: The Value of Machine-Acquired Subject
+Knowledge for Knowledge-Based Retrieval."*
 
 ---
 
