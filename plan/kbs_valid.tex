@@ -1,0 +1,130 @@
+% ============================================================
+% kbs_valid.tex — KBS journal: Acquisition validity (Section 5).
+% Section label: sec:valid (referenced by Method + Intro).
+% Covers RQ2/RQ3 (plan): acquisition accuracy against validated gold,
+% error taxonomy, agreement-ceiling reading, representation-type and
+% memorization analysis. E2 (panel) / E3 (multi-model, conditioning)
+% results marked \TODO.
+% Bibliography: kbs_ke_references.bib + paper/references.bib.
+% ============================================================
+
+\section{Acquisition Validity}
+\label{sec:valid}
+
+Knowledge acquired by a machine is only as good as its validation
+\cite{okeefe_kbs_validation}. This section reports how the acquisition
+component's output scores against professional gold, and what the errors
+look like under a knowledge-quality taxonomy. Throughout, we read LLM
+scores against the ceiling the data itself imposes---two professional
+sources rarely agree exactly (Section~\ref{sec:data})---rather than against
+exact match. Panel-validated gold and the measured inter-cataloger
+agreement ceiling \TODO{E2} will upgrade the numbers reported here; the
+conference-scale figures establish the method and the qualitative results.
+
+\subsection{Multi-level agreement with professional gold}
+
+The acquisition component proposes, per record, subject headings and a
+Dewey number. We score the proposals against professional gold at three
+levels, reflecting that different valid headings for the same concept are
+legitimate \cite{okeefe_kbs_validation}: \emph{exact} (normalized string
+match), \emph{semantic equivalence} (a different valid heading for the same
+concept), and \emph{acceptable} (a correct broader heading). On
+\CatRecords{} records with \CatGoldHeadings{} gold headings
+\TODO{E1: scale}, exact agreement covers \CatExact\% of gold headings;
+allowing semantic equivalence raises coverage to \CatSemantic\%, and
+allowing a correct broader heading reaches \CatAcceptable\%. The choice of
+scoring level is not cosmetic: exact match alone understates the
+acquisition component by nearly a factor of two, exactly the gap the
+HathiTrust cross-check (Section~\ref{sec:data}) predicts for professional
+catalogers themselves. At the record level, \CatRecordsAnyExact\% of
+records receive at least one exactly correct heading.
+
+Classification acquisition is reported separately because the
+representation is closed and hierarchical: exact Dewey agreement is
+\CatDDCExact\% of gold-carrying records, rising to \CatDDCClass\% at the
+3-digit class, with \CatDDCWrongBranch\% landing in the wrong top-level
+class. The contrast between the two representations---\CatExact\% exact
+subject-heading agreement versus \CatDDCClass\% three-digit class
+accuracy---is the first appearance of the representation-dependence theme;
+Section~\ref{sec:util} shows it is load-bearing for downstream utility.
+
+\subsection{Error taxonomy and the unmatched residual}
+
+Validation requires classifying what the acquisition component got wrong,
+not just what it matched. Predicted headings that match no gold are
+classified into a knowledge-quality taxonomy: \emph{over-specific},
+\emph{under-specific}, \emph{authority-violating} (main heading absent from
+the LC authority files, checked live against \texttt{id.loc.gov}), and
+\emph{valid-but-unmatched} (valid LCSH that matches no gold heading for that
+record). Fabrication---the failure mode that motivates authority
+control---is rare: only \CatAuthorityViolations{} of \CatPredHeadings{}
+predicted headings (\CatAuthorityRate\%) violate the authority files
+\TODO{E3: confirm across models}.
+
+The dominant residual is the \CatUnmatched{} valid-but-unmatched headings
+(\TODO{E1: re-derive}). These are not errors by construction: the
+HathiTrust cross-check shows two professional sources share an exact
+heading for only a minority of books, so a predicted heading absent from one
+source's gold may be a legitimate alternative rather than a mistake. We
+decompose the residual using evidence internal to the knowledge base: of the
+\CatUnmatched{} headings, \UnmGoldElsewhere{} are the \emph{gold heading of
+another record} in the benchmark (a heading professionals demonstrably
+assign), \UnmNearSem{} fall within one cosine band of the record's own gold
+(near-paraphrases just under the semantic threshold), and \UnmFamily{}
+share a main-heading family with another record's gold; the union carries
+\UnmShare\% of the residual, leaving \UnmResidual{} as the honest upper
+bound on genuine error \TODO{E2: adjudicate with the cataloger panel}. The
+panel is what converts that bound into a measurement; until then, all
+subject-heading scores in this paper are \emph{agreement with one
+professional source}, not accuracy in an absolute sense.
+
+\subsection{What drives acquisition quality}
+
+Three levers could explain acquisition quality; we isolate what the current
+data supports and what the journal extension must add.
+
+\textbf{Representation type (measured).} The largest quality difference is
+between representations, not within them: classification acquisition
+(\CatDDCClass\% at the 3-digit class) is far more reliable than subject
+acquisition (\CatExact\% exact) \TODO{E1: re-verify at scale}. The
+mechanism is structural: Dewey is a closed, hierarchical vocabulary in
+which the component can be approximately right at a coarser granularity;
+LCSH is an open, pre-coordinated string vocabulary in which being exactly
+right is harder and different valid answers abound. This is why
+Section~\ref{sec:util} measures the two representations' downstream utility
+separately.
+
+\textbf{Memorization (measured, bounded).} These are canonical
+public-domain works, so a large model may recall their real headings rather
+than perform acquisition. Splitting records into popularity terciles by
+download count, exact subject agreement runs
+\PopLowExact{} / \PopMidExact{} / \PopHighExact{} from least to most
+downloaded, and 3-digit Dewey accuracy
+\PopLowDdc{} / \PopMidDdc{} / \PopHighDdc{}. There is a popularity effect
+on exact heading agreement (\PopExactDelta{} from bottom to top tercile)
+but it is non-monotonic, and the strong result---classification---is nearly
+flat (\PopDdcDelta{}), as is the authority-violation rate
+(\PopLowAuth\% vs.\ \PopHighAuth\%). Memorization does not appear to carry
+the results, but the probe only bounds recall effects across well-known
+works \TODO{E1: extend to a corpus with genuinely obscure material}.
+
+\textbf{Model and conditioning (to be measured \TODO{E3}).} The primary
+acquisition runs use a single LLM (\texttt{deepseek-chat}) conditioned on
+the sparse record only. The journal version replicates acquisition across
+model tiers and adds a full-text-conditioned condition, testing whether
+content access differentially improves thesaurus-style subject acquisition
+versus hierarchical classification---the mechanistic prediction that would
+explain the representation gap above. These runs are planned
+\TODO{E3: multi-model + conditioning results}.
+
+\subsection{Summary for the knowledge-engineering claims}
+
+Acquisition validity is a three-part statement. (i) Under a
+multi-level rubric that respects legitimate inter-cataloger variation, the
+LLM's subject-heading acquisition is materially better than exact-match
+scoring suggests, and classification acquisition is strong at the class
+level. (ii) Its errors are rarely fabrication; the dominant residual is
+valid-but-unmatched knowledge whose legitimate-alternative share is bounded
+by internal evidence and will be measured by the panel \TODO{E2}. (iii) The
+quality profile differs sharply across representations, which is the
+prediction Section~\ref{sec:util} tests downstream.

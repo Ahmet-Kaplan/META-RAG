@@ -149,7 +149,7 @@ Avoid titles that lead with "cataloging" or "libraries".
 | 2. Related work | KE-cycle organization (acquisition/representation/validation/utilization) + systematic comparison table (tab:rel) | Draft: `plan/kbs_related_work.tex` |
 | 3. Knowledge & system model | Knowledge being acquired (two representations + completeness); acquisition component; consuming KBS (record index + field ablation); measurement apparatus (two-sided benchmark, multi-level rubric, pooled graded) | Draft: `plan/kbs_method.tex` |
 | 4. Corpus & ground truth | Corpus (Gutenberg+OL join, chunks); gold KB (LCSH + DDC, any-gold-match); HathiTrust gold validation (inter-source agreement motivates multi-level rubric); released benchmark instruments | Draft: `plan/kbs_data.tex` |
-| 5. Validation of acquired knowledge (E2/E3) | Multi-level scoring vs. gold; error taxonomy; agreement ceiling; model/conditioning/representation drivers | Conference RQ4 + new panel/model work |
+| 5. Validation of acquired knowledge (E2/E3) | Multi-level agreement (exact/semantic/acceptable); error taxonomy + unmatched-residual decomposition (158/241/335, 36.8% union, 589 residual); representation-type + memorization drivers; agreement-ceiling reading | Draft: `plan/kbs_valid.tex` (+ `plan/kbs_unmatched_numbers.tex`) |
 | 6. Utility of acquired knowledge (RQ1) | Field ablation (representation dependence); sparsity sweep (completeness dependence); robustness | Conference RQ1/RQ5 + E1 |
 | 7. Cost of acquisition (RQ4) | Expert time from scratch vs. verifying LLM output; edits; quality | E4 instrument (ready) |
 | 8. Deployment analysis (RQ5) | Utility per expert-hour vs. coverage; break-even; sensitivity | New |
