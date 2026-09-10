@@ -133,10 +133,24 @@ def get_excerpt(rec: Dict, cache_dir: Path,
     if cache_file.exists():
         cached = cache_file.read_text(encoding="utf-8", errors="replace").strip()
         return cached or None
-    url = rec.get("plaintext_url")
-    if not url:
-        return None
-    raw = download_text(url)
+    # Prefer the /cache/epub/ mirror when the Gutenberg id is known: it serves
+    # byte-identical text (verified) and responds several times faster than the
+    # /ebooks/*.txt.utf-8 path, which matters when warming ~600 works. Fall
+    # back to the record's own plaintext_url.
+    # One fast mirror attempt, then the record's own URL. Trying extra mirror
+    # suffixes was measured to waste ~24 s per unmirrored work (each 404 costs
+    # ~8 s) before the same fallback, so it is not attempted.
+    urls = []
+    gid = rec.get("gutenberg_id")
+    if gid:
+        urls.append(f"https://www.gutenberg.org/cache/epub/{gid}/pg{gid}.txt")
+    if rec.get("plaintext_url"):
+        urls.append(rec["plaintext_url"])
+    raw = None
+    for url in urls:
+        raw = download_text(url)
+        if raw:
+            break
     if not raw:
         return None
     excerpt = " ".join(gutenberg_body(raw).split())[:chars]
@@ -216,6 +230,14 @@ def main() -> None:
     ap.add_argument("--text-cache", default=str(ROOT / "data" / "text_cache"),
                     help="cache dir for Gutenberg excerpts (fulltext condition)")
     ap.add_argument("--excerpt-chars", type=int, default=EXCERPT_CHARS)
+    ap.add_argument("--cached-text-only", action="store_true",
+                    help="fulltext condition: process only records whose text "
+                         "excerpt is already cached (no downloads during the "
+                         "API run); uncached records are skipped and reported")
+    ap.add_argument("--warm-text-cache", action="store_true",
+                    help="download and cache the text excerpts only, no LLM "
+                         "calls (use before a fulltext cell to avoid mixing "
+                         "Gutenberg rate limits with API traffic; resumable)")
     args = ap.parse_args()
 
     model = args.model or None
@@ -229,6 +251,41 @@ def main() -> None:
         recs: List[Dict] = [json.loads(l) for l in f if l.strip()]
     if args.limit:
         recs = recs[: args.limit]
+
+    skipped_uncached = 0
+    if args.condition == "fulltext" and args.cached_text_only:
+        cache_dir = Path(args.text_cache)
+        kept = []
+        for r in recs:
+            if (cache_dir / f"{r['work_key'].replace('/', '_')}.txt").exists():
+                kept.append(r)
+        skipped_uncached = len(recs) - len(kept)
+        recs = kept
+        logger.info("cached-text-only: %d records with cached text, %d skipped",
+                    len(recs), skipped_uncached)
+
+    if args.warm_text_cache:
+        cache_dir = Path(args.text_cache)
+        ok = [0]
+        miss = [0]
+        lock0 = threading.Lock()
+
+        def warm(rec: Dict) -> None:
+            ex = get_excerpt(rec, cache_dir, args.excerpt_chars)
+            with lock0:
+                if ex:
+                    ok[0] += 1
+                else:
+                    miss[0] += 1
+                if (ok[0] + miss[0]) % 50 == 0:
+                    logger.info("  warmed %d/%d (%d unavailable)",
+                                ok[0] + miss[0], len(recs), miss[0])
+
+        with ThreadPoolExecutor(max_workers=args.workers) as pool:
+            list(pool.map(warm, recs))
+        logger.info("text cache warm: %d cached, %d unavailable -> %s",
+                    ok[0], miss[0], cache_dir)
+        return
 
     done = load_done(out_path) if args.resume else {}
     pending = [r for r in recs if r["work_key"] not in done]
@@ -261,8 +318,10 @@ def main() -> None:
 
     failed = sum(1 for r in results if r.get("error"))
     no_text = sum(1 for r in results if r.get("error") == "no_text_available")
-    logger.info("Wrote %d predictions -> %s (%d failed, %d lacked text)",
-                len(results), out_path, failed, no_text)
+    logger.info("Wrote %d predictions -> %s (%d failed, %d lacked text%s)",
+                len(results), out_path, failed, no_text,
+                f", {skipped_uncached} skipped (no cached text)"
+                if skipped_uncached else "")
 
 
 if __name__ == "__main__":

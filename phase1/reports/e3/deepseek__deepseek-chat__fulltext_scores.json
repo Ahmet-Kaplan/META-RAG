@@ -1,0 +1,38 @@
+{
+  "n_records": 416,
+  "n_generation_failures": 7,
+  "n_gold_headings": 1007,
+  "n_pred_headings": 1495,
+  "semantic_tau": 0.75,
+  "authority_checked": true,
+  "authority_lookup_failures": 0,
+  "subject_recall_by_level": {
+    "exact": 450,
+    "semantic": 259,
+    "acceptable": 31,
+    "miss": 267
+  },
+  "subject_recall_cumulative": {
+    "exact": 0.447,
+    "exact_or_semantic": 0.704,
+    "exact_semantic_or_acceptable": 0.735
+  },
+  "records_with_any_exact_heading": 0.695,
+  "predicted_heading_errors": {
+    "unrelated": 633,
+    "authority_violation": 19,
+    "under_specific": 37,
+    "over_specific": 17
+  },
+  "ddc": {
+    "n": 199,
+    "levels": {
+      "exact": 136,
+      "wrong_branch": 14,
+      "class3": 35,
+      "class1": 14
+    },
+    "exact": 0.683,
+    "class3": 0.859
+  }
+}

@@ -108,14 +108,29 @@ flat (\PopDdcDelta{}), as is the authority-violation rate
 the results, but the probe only bounds recall effects across well-known
 works \TODO{E1: extend to a corpus with genuinely obscure material}.
 
-\textbf{Model and conditioning (to be measured \TODO{E3}).} The primary
-acquisition runs use a single LLM (\texttt{deepseek-chat}) conditioned on
-the sparse record only. The journal version replicates acquisition across
-model tiers and adds a full-text-conditioned condition, testing whether
-content access differentially improves thesaurus-style subject acquisition
-versus hierarchical classification---the mechanistic prediction that would
-explain the representation gap above. These runs are planned
-\TODO{E3: multi-model + conditioning results}.
+\textbf{Conditioning (measured).} Giving the acquisition component a
+head-of-text excerpt raises subject-heading quality materially while leaving
+classification nearly unchanged. On the records scored in both conditions
+($n=191$, the strictly paired set), any-level subject-heading coverage rises
+from \EthreeLcshSparse{} to \EthreeLcshFull{} ($+\EthreeLcshDelta{}$)
+while 3-digit classification rises only from \EthreeDdcSparse{} to
+\EthreeDdcFull{} ($+\EthreeDdcDelta{}$); the difference of differences is
+$+\EthreeDiff$ (95\% CI \EthreeDiffCI). The direction is the predicted
+mechanism---content helps choose among open heading strings far more than it
+helps place a work in a closed hierarchy---but the interval touches zero at
+this sample size, so we report the interaction as suggestive rather than
+resolved. Fabrication does not increase with content access (authority
+violations: \EthreeViolSparse\% of predicted headings sparse vs.\
+\EthreeViolFull\% with text).
+
+\textbf{Model tier (to be measured \TODO{E3}).} The conditioning result
+above is from a single model (\texttt{deepseek-chat}). The journal version
+replicates acquisition across model tiers (a frontier API model and a
+small/open-weight model) to bound model dependence and to test whether the
+representation gap and the conditioning interaction hold across models. The
+harness, provider abstraction, and orchestration are implemented and
+released (\texttt{run\_e3.py}); these cells are pending
+\TODO{E3: frontier + small/open cells}.
 
 \subsection{Summary for the knowledge-engineering claims}
 

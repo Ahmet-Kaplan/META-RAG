@@ -103,7 +103,16 @@ def kappa_free_report(cells: List[Dict], per_record: Dict[str, Dict],
 
     result = {"cells": table, "tests": {}}
 
-    # H2: difference-of-differences (fulltext - sparse), LCSH vs DDC
+    # H2: difference-of-differences (fulltext - sparse), LCSH vs DDC.
+    #
+    # The strict paired design restricts to records where BOTH metrics are
+    # defined in both cells (gold-DDC records), so the two deltas are computed
+    # on the same works. An earlier version compared the LCSH delta over all
+    # text-bearing records against the DDC delta over the gold-DDC subset;
+    # that is not paired and it materially overstated the interaction (it
+    # compared +0.098 vs +0.016, whereas the paired estimate is +0.061 vs
+    # +0.016). We report the strict test as primary and the loose variant for
+    # transparency.
     for prov in sorted({c["provider"] for c in cells}):
         sp = next((c for c in cells if c["provider"] == prov and c["condition"] == "sparse"), None)
         ft = next((c for c in cells if c["provider"] == prov and c["condition"] == "fulltext"), None)
@@ -111,36 +120,51 @@ def kappa_free_report(cells: List[Dict], per_record: Dict[str, Dict],
             continue
         sp_pr, ft_pr = per_record.get(sp["tag"], {}), per_record.get(ft["tag"], {})
         common = sorted(set(sp_pr) & set(ft_pr))
-        if len(common) < 20:
+        strict = [r for r in common
+                  if sp_pr[r].get("ddc_ok") is not None
+                  and ft_pr[r].get("ddc_ok") is not None]
+        if len(strict) < 20:
             continue
-        d_lcsh = np.array([ft_pr[r]["any_level"] - sp_pr[r]["any_level"] for r in common])
-        d_ddc = np.array([ft_pr[r]["ddc_ok"] - sp_pr[r]["ddc_ok"] for r in common
-                          if ft_pr[r].get("ddc_ok") is not None
-                          and sp_pr[r].get("ddc_ok") is not None])
-        if len(d_ddc) < 20:
-            continue
+        dl = np.array([ft_pr[r]["any_level"] - sp_pr[r]["any_level"] for r in strict])
+        dd = np.array([ft_pr[r]["ddc_ok"] - sp_pr[r]["ddc_ok"] for r in strict])
         rng = random.Random(11)
-        obs = d_lcsh.mean() - d_ddc.mean()
-        # permutation: shuffle condition labels within record is not possible
-        # (we compare two deltas on the same records), so test the difference of
-        # means by resampling records (bootstrap CI) plus a sign test.
         boot = []
+        n = len(strict)
         for _ in range(5000):
-            idx = [rng.randrange(len(common)) for _ in range(len(common))]
-            # d_ddc is aligned only on records with DDC gold; resample both by
-            # record index inside their own vectors
-            bl = d_lcsh.mean()
-            idx_d = [rng.randrange(len(d_ddc)) for _ in range(len(d_ddc))]
-            bd = d_ddc[idx_d].mean()
-            boot.append(bl - bd)
+            idx = [rng.randrange(n) for _ in range(n)]
+            boot.append(dl[idx].mean() - dd[idx].mean())
         lo, hi = np.percentile(boot, [2.5, 97.5])
+
+        # loose variant (reported for reference only)
+        d_l_all = np.array([ft_pr[r]["any_level"] - sp_pr[r]["any_level"] for r in common])
+        d_d_all = np.array([ft_pr[r]["ddc_ok"] - sp_pr[r]["ddc_ok"] for r in common
+                            if sp_pr[r].get("ddc_ok") is not None
+                            and ft_pr[r].get("ddc_ok") is not None])
         result["tests"][f"H2_{prov}"] = {
-            "n_records": len(common),
-            "delta_lcsh_fulltext_minus_sparse": round(float(d_lcsh.mean()), 4),
-            "delta_ddc_fulltext_minus_sparse": round(float(d_ddc.mean()), 4),
-            "diff_of_diff": round(float(obs), 4),
+            "design": "strict paired (records where both metrics are defined)",
+            "n_paired": n,
+            "n_text_subset": len(common),
+            "lcsh_any_level": {
+                "sparse": round(float(np.mean([sp_pr[r]["any_level"] for r in strict])), 4),
+                "fulltext": round(float(np.mean([ft_pr[r]["any_level"] for r in strict])), 4),
+                "delta": round(float(dl.mean()), 4),
+            },
+            "ddc_class3": {
+                "sparse": round(float(np.mean([sp_pr[r]["ddc_ok"] for r in strict])), 4),
+                "fulltext": round(float(np.mean([ft_pr[r]["ddc_ok"] for r in strict])), 4),
+                "delta": round(float(dd.mean()), 4),
+            },
+            "diff_of_diff": round(float(dl.mean() - dd.mean()), 4),
             "diff_of_diff_ci95": [round(float(lo), 4), round(float(hi), 4)],
             "supports_H2": bool(lo > 0),
+            "note": "CI touching zero means the direction is supported but the "
+                    "interaction is not resolved at this sample size; more "
+                    "models/records (E3 multi-model) are needed",
+            "loose_variant_unpaired": {
+                "n_lcsh": len(d_l_all), "delta_lcsh": round(float(d_l_all.mean()), 4),
+                "n_ddc": len(d_d_all), "delta_ddc": round(float(d_d_all.mean()), 4),
+                "diff_of_diff": round(float(d_l_all.mean() - d_d_all.mean()), 4),
+            },
         }
 
     # H3: representation gap present (DDC > LCSH) in every cell
@@ -163,8 +187,15 @@ def main() -> None:
     ap.add_argument("--workers", type=int, default=8)
     ap.add_argument("--resume", action="store_true")
     ap.add_argument("--text-cache", default=str(ROOT / "data" / "text_cache"))
+    ap.add_argument("--cached-text-only", action="store_true",
+                    help="pass through to eval_libra_cat: fulltext cells use "
+                         "only records whose text excerpt is already cached")
     ap.add_argument("--no-authority", action="store_true",
                     help="skip id.loc.gov lookups when scoring (offline runs)")
+    ap.add_argument("--score-only", action="store_true",
+                    help="skip generation and score existing cell prediction "
+                         "files (e.g. to reuse the shipped sparse run as the "
+                         "anchor cell without re-calling the API)")
     ap.add_argument("--dry-run", action="store_true", help="print the plan only")
     args = ap.parse_args()
 
@@ -191,20 +222,28 @@ def main() -> None:
     per_record: Dict[str, Dict] = {}
     for c in cells:
         print(f"\n=== cell {c['tag']}")
-        gen = [sys.executable, str(SCRIPTS / "eval_libra_cat.py"),
-               "--provider", c["provider"], "--condition", c["condition"],
-               "--out", str(c["preds"]), "--workers", str(args.workers),
-               "--text-cache", args.text_cache]
-        if c["model"]:
-            gen += ["--model", c["model"]]
-        if args.limit:
-            gen += ["--limit", str(args.limit)]
-        if args.resume:
-            gen += ["--resume"]
-        rc = run(gen, args.dry_run)
-        if rc != 0:
-            print(f"  generation failed (exit {rc}); skipping cell")
-            continue
+        if args.score_only:
+            if not c["preds"].exists():
+                print(f"  no predictions at {c['preds']}; skipping cell")
+                continue
+            print("  (score-only: reusing existing predictions)")
+        else:
+            gen = [sys.executable, str(SCRIPTS / "eval_libra_cat.py"),
+                   "--provider", c["provider"], "--condition", c["condition"],
+                   "--out", str(c["preds"]), "--workers", str(args.workers),
+                   "--text-cache", args.text_cache]
+            if c["model"]:
+                gen += ["--model", c["model"]]
+            if args.limit:
+                gen += ["--limit", str(args.limit)]
+            if args.resume:
+                gen += ["--resume"]
+            if args.cached_text_only:
+                gen += ["--cached-text-only"]
+            rc = run(gen, args.dry_run)
+            if rc != 0:
+                print(f"  generation failed (exit {rc}); skipping cell")
+                continue
         score = [sys.executable, str(SCRIPTS / "score_libra_cat.py"),
                  "--preds", str(c["preds"]), "--out", str(c["scores"]),
                  "--per-record-out", str(c["per_record"])]

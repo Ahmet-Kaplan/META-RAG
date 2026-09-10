@@ -1,0 +1,70 @@
+{
+ "cells": [
+  {
+   "cell": "deepseek__deepseek-chat__sparse",
+   "provider": "deepseek",
+   "model": "deepseek-chat",
+   "condition": "sparse",
+   "n": 591,
+   "lcsh_any_level": 0.704,
+   "ddc_class3": 0.821,
+   "gap": 0.117
+  },
+  {
+   "cell": "deepseek__deepseek-chat__fulltext",
+   "provider": "deepseek",
+   "model": "deepseek-chat",
+   "condition": "fulltext",
+   "n": 407,
+   "lcsh_any_level": 0.816,
+   "ddc_class3": 0.853,
+   "gap": 0.038
+  }
+ ],
+ "tests": {
+  "H2_deepseek": {
+   "design": "strict paired (records where both metrics are defined)",
+   "n_paired": 191,
+   "n_text_subset": 407,
+   "lcsh_any_level": {
+    "sparse": 0.7759,
+    "fulltext": 0.8369,
+    "delta": 0.061
+   },
+   "ddc_class3": {
+    "sparse": 0.8377,
+    "fulltext": 0.8534,
+    "delta": 0.0157
+   },
+   "diff_of_diff": 0.0453,
+   "diff_of_diff_ci95": [
+    -0.0038,
+    0.0946
+   ],
+   "supports_H2": false,
+   "note": "CI touching zero means the direction is supported but the interaction is not resolved at this sample size; more models/records (E3 multi-model) are needed",
+   "loose_variant_unpaired": {
+    "n_lcsh": 407,
+    "delta_lcsh": 0.0978,
+    "n_ddc": 191,
+    "delta_ddc": 0.0157,
+    "diff_of_diff": 0.0821
+   }
+  },
+  "H3": {
+   "cells": [
+    {
+     "cell": "deepseek__deepseek-chat__sparse",
+     "gap": 0.117,
+     "holds": true
+    },
+    {
+     "cell": "deepseek__deepseek-chat__fulltext",
+     "gap": 0.038,
+     "holds": true
+    }
+   ],
+   "holds_in_all_cells": true
+  }
+ }
+}

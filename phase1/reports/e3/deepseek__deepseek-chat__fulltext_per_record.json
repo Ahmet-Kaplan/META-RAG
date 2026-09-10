@@ -1,0 +1,3665 @@
+{
+ "/works/OL3857402W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL4794651W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "wrong_branch",
+  "ddc_ok": 0.0
+ },
+ "/works/OL6609763W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL53908W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL4818235W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "wrong_branch",
+  "ddc_ok": 0.0
+ },
+ "/works/OL2650265W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL880054W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL528094W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL2629635W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL67551W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL100630W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class1",
+  "ddc_ok": 0.0
+ },
+ "/works/OL2853735W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL1068072W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL3914096W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL68663W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL1087494W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL7508281W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": "class1",
+  "ddc_ok": 0.0
+ },
+ "/works/OL7574852W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class1",
+  "ddc_ok": 0.0
+ },
+ "/works/OL1144827W": {
+  "exact": 0.3333333333333333,
+  "semantic": 0.0,
+  "acceptable": 0.3333333333333333,
+  "miss": 0.3333333333333333,
+  "any_level": 0.6666666666666666,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL20948093W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class1",
+  "ddc_ok": 0.0
+ },
+ "/works/OL20526585W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "wrong_branch",
+  "ddc_ok": 0.0
+ },
+ "/works/OL5080014W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "wrong_branch",
+  "ddc_ok": 0.0
+ },
+ "/works/OL76891W": {
+  "exact": 0.0,
+  "semantic": 0.6666666666666666,
+  "acceptable": 0.3333333333333333,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL78871W": {
+  "exact": 0.75,
+  "semantic": 0.25,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL1068105W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 1.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL38723570W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL41438445W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL60358W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL12893804W": {
+  "exact": 0.25,
+  "semantic": 0.0,
+  "acceptable": 0.25,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": "class1",
+  "ddc_ok": 0.0
+ },
+ "/works/OL2983646W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 1.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL2483236W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL69179W": {
+  "exact": 0.16666666666666666,
+  "semantic": 0.16666666666666666,
+  "acceptable": 0.16666666666666666,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL139759W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL3698983W": {
+  "exact": 0.3333333333333333,
+  "semantic": 0.3333333333333333,
+  "acceptable": 0.0,
+  "miss": 0.3333333333333333,
+  "any_level": 0.6666666666666666,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL40407830W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "wrong_branch",
+  "ddc_ok": 0.0
+ },
+ "/works/OL139049W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL1100467W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL810614W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL16915826W": {
+  "exact": 0.0,
+  "semantic": 0.6,
+  "acceptable": 0.0,
+  "miss": 0.4,
+  "any_level": 0.6,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL111358W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL15411126W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL7053575W": {
+  "exact": 0.25,
+  "semantic": 0.25,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL111359W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.5,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL211037W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": "wrong_branch",
+  "ddc_ok": 0.0
+ },
+ "/works/OL1455042W": {
+  "exact": 0.0,
+  "semantic": 0.75,
+  "acceptable": 0.0,
+  "miss": 0.25,
+  "any_level": 0.75,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL1130038W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL2629638W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL240335W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL6622447W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL4114333W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL19923414W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL44718W": {
+  "exact": 0.2,
+  "semantic": 0.6,
+  "acceptable": 0.2,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class1",
+  "ddc_ok": 0.0
+ },
+ "/works/OL8193416W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL262454W": {
+  "exact": 0.6,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.4,
+  "any_level": 0.6,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL8662242W": {
+  "exact": 0.0,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL16200353W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL5657105W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL28199W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL4362140W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.5,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class1",
+  "ddc_ok": 0.0
+ },
+ "/works/OL3177366W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL9399062W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "wrong_branch",
+  "ddc_ok": 0.0
+ },
+ "/works/OL121231W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL118986W": {
+  "exact": 0.0,
+  "semantic": 0.6,
+  "acceptable": 0.2,
+  "miss": 0.2,
+  "any_level": 0.8,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL13756883W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL4418043W": {
+  "exact": 0.2,
+  "semantic": 0.2,
+  "acceptable": 0.0,
+  "miss": 0.6,
+  "any_level": 0.4,
+  "ddc_level": "wrong_branch",
+  "ddc_ok": 0.0
+ },
+ "/works/OL20571025W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL24034W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL6576225W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL7504309W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL52266W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL114967W": {
+  "exact": 0.6666666666666666,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.3333333333333333,
+  "any_level": 0.6666666666666666,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL2524017W": {
+  "exact": 0.6666666666666666,
+  "semantic": 0.3333333333333333,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL39912224W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": "wrong_branch",
+  "ddc_ok": 0.0
+ },
+ "/works/OL258902W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL450063W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL4300623W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL6607439W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL27063975W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL12196466W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL65430W": {
+  "exact": 0.6666666666666666,
+  "semantic": 0.3333333333333333,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL7014384W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL694849W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "wrong_branch",
+  "ddc_ok": 0.0
+ },
+ "/works/OL138052W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL13703833W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL260099W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class1",
+  "ddc_ok": 0.0
+ },
+ "/works/OL248160W": {
+  "exact": 0.3333333333333333,
+  "semantic": 0.6666666666666666,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL14877799W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": "class1",
+  "ddc_ok": 0.0
+ },
+ "/works/OL144824W": {
+  "exact": 0.75,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.25,
+  "any_level": 0.75,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL1417942W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": "class1",
+  "ddc_ok": 0.0
+ },
+ "/works/OL41081W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL1801018W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL318878W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL810991W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL495872W": {
+  "exact": 0.3333333333333333,
+  "semantic": 0.6666666666666666,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL473469W": {
+  "exact": 0.0,
+  "semantic": 0.3333333333333333,
+  "acceptable": 0.0,
+  "miss": 0.6666666666666666,
+  "any_level": 0.3333333333333333,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL54056W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL7114813W": {
+  "exact": 0.25,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.75,
+  "any_level": 0.25,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL27733567W": {
+  "exact": 0.2857142857142857,
+  "semantic": 0.2857142857142857,
+  "acceptable": 0.0,
+  "miss": 0.42857142857142855,
+  "any_level": 0.5714285714285714,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL5306185W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL63893W": {
+  "exact": 0.0,
+  "semantic": 0.2,
+  "acceptable": 0.0,
+  "miss": 0.8,
+  "any_level": 0.2,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL53918W": {
+  "exact": 0.3333333333333333,
+  "semantic": 0.6666666666666666,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL7973273W": {
+  "exact": 0.3333333333333333,
+  "semantic": 0.6666666666666666,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL53959W": {
+  "exact": 0.6,
+  "semantic": 0.2,
+  "acceptable": 0.0,
+  "miss": 0.2,
+  "any_level": 0.8,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL495761W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL1798692W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class1",
+  "ddc_ok": 0.0
+ },
+ "/works/OL53994W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL55649W": {
+  "exact": 0.8,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.2,
+  "any_level": 0.8,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL5678546W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.5,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL1090949W": {
+  "exact": 0.25,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.75,
+  "any_level": 0.25,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL33732755W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL15861388W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class1",
+  "ddc_ok": 0.0
+ },
+ "/works/OL5207918W": {
+  "exact": 0.3333333333333333,
+  "semantic": 0.3333333333333333,
+  "acceptable": 0.0,
+  "miss": 0.3333333333333333,
+  "any_level": 0.6666666666666666,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL490919W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL15309606W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL634617W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL362686W": {
+  "exact": 0.6666666666666666,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.3333333333333333,
+  "any_level": 0.6666666666666666,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL14877875W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL259017W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL258850W": {
+  "exact": 0.6,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.4,
+  "any_level": 0.6,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL531767W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL262460W": {
+  "exact": 0.75,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.25,
+  "any_level": 0.75,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL18415W": {
+  "exact": 0.0,
+  "semantic": 0.07142857142857142,
+  "acceptable": 0.0,
+  "miss": 0.9285714285714286,
+  "any_level": 0.07142857142857142,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL811057W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL476471W": {
+  "exact": 0.42857142857142855,
+  "semantic": 0.14285714285714285,
+  "acceptable": 0.0,
+  "miss": 0.42857142857142855,
+  "any_level": 0.5714285714285714,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL1064699W": {
+  "exact": 0.25,
+  "semantic": 0.25,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL5110957W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL20600W": {
+  "exact": 0.6666666666666666,
+  "semantic": 0.3333333333333333,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL38885200W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL843376W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "wrong_branch",
+  "ddc_ok": 0.0
+ },
+ "/works/OL39349W": {
+  "exact": 0.0,
+  "semantic": 0.4,
+  "acceptable": 0.0,
+  "miss": 0.6,
+  "any_level": 0.4,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL19908W": {
+  "exact": 0.8,
+  "semantic": 0.2,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL381550W": {
+  "exact": 0.75,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.25,
+  "any_level": 0.75,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL14877869W": {
+  "exact": 0.0,
+  "semantic": 0.25,
+  "acceptable": 0.0,
+  "miss": 0.75,
+  "any_level": 0.25,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL15202777W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL107195W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL1064761W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class1",
+  "ddc_ok": 0.0
+ },
+ "/works/OL1098085W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL38898913W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL36052835W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL52456W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL1063797W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL100672W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL14877882W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL43839W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL10345406W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL30337212W": {
+  "exact": 0.25,
+  "semantic": 0.25,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL9786085W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.5,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL40510660W": {
+  "exact": 0.4,
+  "semantic": 0.2,
+  "acceptable": 0.0,
+  "miss": 0.4,
+  "any_level": 0.6,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL687224W": {
+  "exact": 0.0,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL22360W": {
+  "exact": 0.25,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.25,
+  "any_level": 0.75,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL308575W": {
+  "exact": 0.75,
+  "semantic": 0.25,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL54126W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL20344797W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL66554W": {
+  "exact": 0.4,
+  "semantic": 0.4,
+  "acceptable": 0.0,
+  "miss": 0.2,
+  "any_level": 0.8,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL318900W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL45089W": {
+  "exact": 0.8,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.2,
+  "any_level": 0.8,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL24519774W": {
+  "exact": 0.25,
+  "semantic": 0.75,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL24856150W": {
+  "exact": 0.3333333333333333,
+  "semantic": 0.3333333333333333,
+  "acceptable": 0.0,
+  "miss": 0.3333333333333333,
+  "any_level": 0.6666666666666666,
+  "ddc_level": "wrong_branch",
+  "ddc_ok": 0.0
+ },
+ "/works/OL39450386W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL7032971W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL5081401W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL4860137W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.25,
+  "miss": 0.25,
+  "any_level": 0.75,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL184850W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL3360211W": {
+  "exact": 0.3333333333333333,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.6666666666666666,
+  "any_level": 0.3333333333333333,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL3194349W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL24391630W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL2634441W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL284406W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL3266217W": {
+  "exact": 0.6666666666666666,
+  "semantic": 0.3333333333333333,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL687222W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL1104330W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL35914W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL10676359W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": "wrong_branch",
+  "ddc_ok": 0.0
+ },
+ "/works/OL1845823W": {
+  "exact": 0.3333333333333333,
+  "semantic": 0.3333333333333333,
+  "acceptable": 0.0,
+  "miss": 0.3333333333333333,
+  "any_level": 0.6666666666666666,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL1152627W": {
+  "exact": 0.4,
+  "semantic": 0.4,
+  "acceptable": 0.0,
+  "miss": 0.2,
+  "any_level": 0.8,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL41274847W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL41902W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL1127368W": {
+  "exact": 0.0,
+  "semantic": 0.75,
+  "acceptable": 0.25,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL1176821W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "wrong_branch",
+  "ddc_ok": 0.0
+ },
+ "/works/OL2132149W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL6503057W": {
+  "exact": 0.4,
+  "semantic": 0.4,
+  "acceptable": 0.2,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL2515123W": {
+  "exact": 0.2,
+  "semantic": 0.4,
+  "acceptable": 0.2,
+  "miss": 0.2,
+  "any_level": 0.8,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL146486W": {
+  "exact": 0.0,
+  "semantic": 0.5,
+  "acceptable": 0.5,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class1",
+  "ddc_ok": 0.0
+ },
+ "/works/OL1417901W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL2125272W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL5605563W": {
+  "exact": 0.5,
+  "semantic": 0.16666666666666666,
+  "acceptable": 0.0,
+  "miss": 0.3333333333333333,
+  "any_level": 0.6666666666666666,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL212291W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "class3",
+  "ddc_ok": 1.0
+ },
+ "/works/OL2160387W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL37766011W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL26492W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL24895273W": {
+  "exact": 0.0,
+  "semantic": 0.25,
+  "acceptable": 0.0,
+  "miss": 0.75,
+  "any_level": 0.25,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL5270789W": {
+  "exact": 0.1111111111111111,
+  "semantic": 0.7777777777777778,
+  "acceptable": 0.0,
+  "miss": 0.1111111111111111,
+  "any_level": 0.8888888888888888,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL22014713W": {
+  "exact": 0.14285714285714285,
+  "semantic": 0.42857142857142855,
+  "acceptable": 0.0,
+  "miss": 0.42857142857142855,
+  "any_level": 0.5714285714285714,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL11449061W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL7336887W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": "exact",
+  "ddc_ok": 1.0
+ },
+ "/works/OL24622112W": {
+  "exact": 0.0,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL24419407W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL12869940W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL34473410W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL1165928W": {
+  "exact": 0.3333333333333333,
+  "semantic": 0.3333333333333333,
+  "acceptable": 0.0,
+  "miss": 0.3333333333333333,
+  "any_level": 0.6666666666666666,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL10704800W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL1833915W": {
+  "exact": 0.0,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL9736848W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL24575454W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL39604790W": {
+  "exact": 0.25,
+  "semantic": 0.25,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL36942434W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL30147284W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL36958148W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL6697766W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL5535160W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL8253426W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL28050860W": {
+  "exact": 0.6666666666666666,
+  "semantic": 0.3333333333333333,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL1487546W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL28481004W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL120657W": {
+  "exact": 0.0,
+  "semantic": 0.3333333333333333,
+  "acceptable": 0.3333333333333333,
+  "miss": 0.3333333333333333,
+  "any_level": 0.6666666666666666,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL20424360W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL26525646W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL40565556W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL9437209W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL37922253W": {
+  "exact": 0.2,
+  "semantic": 0.2,
+  "acceptable": 0.0,
+  "miss": 0.6,
+  "any_level": 0.4,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL1203187W": {
+  "exact": 0.0,
+  "semantic": 0.6666666666666666,
+  "acceptable": 0.0,
+  "miss": 0.3333333333333333,
+  "any_level": 0.6666666666666666,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL1526673W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL197616W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL24509022W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL1537903W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL25660346W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL30504860W": {
+  "exact": 0.0,
+  "semantic": 0.6666666666666666,
+  "acceptable": 0.0,
+  "miss": 0.3333333333333333,
+  "any_level": 0.6666666666666666,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL26961702W": {
+  "exact": 0.5,
+  "semantic": 0.3333333333333333,
+  "acceptable": 0.0,
+  "miss": 0.16666666666666666,
+  "any_level": 0.8333333333333334,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL20596396W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL43008309W": {
+  "exact": 0.2857142857142857,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.7142857142857143,
+  "any_level": 0.2857142857142857,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL24464807W": {
+  "exact": 0.4,
+  "semantic": 0.4,
+  "acceptable": 0.0,
+  "miss": 0.2,
+  "any_level": 0.8,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL1196805W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL2345822W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL213135W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL7980044W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL8521156W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL29954741W": {
+  "exact": 0.6666666666666666,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.3333333333333333,
+  "any_level": 0.6666666666666666,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL39631252W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL25833058W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL1503992W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL38769504W": {
+  "exact": 0.25,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.25,
+  "any_level": 0.75,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL26921850W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL27857462W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.8,
+  "miss": 0.2,
+  "any_level": 0.8,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL43171981W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL3046261W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL24430881W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 1.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL22235816W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 1.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL811070W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL24363373W": {
+  "exact": 0.0,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL24657942W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL24464030W": {
+  "exact": 0.3333333333333333,
+  "semantic": 0.3333333333333333,
+  "acceptable": 0.3333333333333333,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL12863132W": {
+  "exact": 0.0,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL4516521W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL37700242W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL4893691W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL1798932W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL39716238W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL36065714W": {
+  "exact": 0.0,
+  "semantic": 0.5,
+  "acceptable": 0.5,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL28473910W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL24518450W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL43355424W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL7910145W": {
+  "exact": 0.2857142857142857,
+  "semantic": 0.2857142857142857,
+  "acceptable": 0.0,
+  "miss": 0.42857142857142855,
+  "any_level": 0.5714285714285714,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL8066386W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL7307210W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL7541877W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL4675088W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL7764218W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL25983081W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL7883372W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL4958626W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL40224769W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL17659599W": {
+  "exact": 0.0,
+  "semantic": 0.8,
+  "acceptable": 0.0,
+  "miss": 0.2,
+  "any_level": 0.8,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL33732956W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL206774W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL5652850W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL31767283W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL9315938M": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL18130567W": {
+  "exact": 0.6666666666666666,
+  "semantic": 0.3333333333333333,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL1799069W": {
+  "exact": 0.0,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL36056894W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL21551716W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL42926186W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL39010645W": {
+  "exact": 0.0,
+  "semantic": 0.6666666666666666,
+  "acceptable": 0.0,
+  "miss": 0.3333333333333333,
+  "any_level": 0.6666666666666666,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL40384724W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL39817905W": {
+  "exact": 0.0,
+  "semantic": 0.6666666666666666,
+  "acceptable": 0.0,
+  "miss": 0.3333333333333333,
+  "any_level": 0.6666666666666666,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL45892108W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL7716074W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL43637786W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL20260697W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL24838905W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL7542161W": {
+  "exact": 0.6666666666666666,
+  "semantic": 0.3333333333333333,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL1799084W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL1101493W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL20176502W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL24856009W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL19555341W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL17960295W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL7551585W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL36062804W": {
+  "exact": 0.2,
+  "semantic": 0.6,
+  "acceptable": 0.0,
+  "miss": 0.2,
+  "any_level": 0.8,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL39824438W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL24863120W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL24432156W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL40594349W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL61621W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL40236025W": {
+  "exact": 0.0,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL15433780W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL196765W": {
+  "exact": 0.16666666666666666,
+  "semantic": 0.16666666666666666,
+  "acceptable": 0.0,
+  "miss": 0.6666666666666666,
+  "any_level": 0.3333333333333333,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL40905674W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL239801W": {
+  "exact": 0.2222222222222222,
+  "semantic": 0.4444444444444444,
+  "acceptable": 0.0,
+  "miss": 0.3333333333333333,
+  "any_level": 0.6666666666666666,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL24367484W": {
+  "exact": 0.6666666666666666,
+  "semantic": 0.3333333333333333,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL26799707W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL1792869W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL36057306W": {
+  "exact": 0.0,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL30742009W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL37768616W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL17679866W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL39614744W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL39216721W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL308945W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL37599519W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL10353509W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL38078229W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL33082850W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL40935100W": {
+  "exact": 0.3333333333333333,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.6666666666666666,
+  "any_level": 0.3333333333333333,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL40198467W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL7863753W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.5,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL34141435W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL2288647W": {
+  "exact": 0.3333333333333333,
+  "semantic": 0.6666666666666666,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL40446360W": {
+  "exact": 0.16666666666666666,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.3333333333333333,
+  "any_level": 0.6666666666666666,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL10414260W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL7527235W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL25626307W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL207068W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL34636021W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL18124517W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL30145270W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL195883W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL20327676W": {
+  "exact": 0.4,
+  "semantic": 0.2,
+  "acceptable": 0.0,
+  "miss": 0.4,
+  "any_level": 0.6,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL36061542W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL69098W": {
+  "exact": 0.0,
+  "semantic": 0.16666666666666666,
+  "acceptable": 0.0,
+  "miss": 0.8333333333333334,
+  "any_level": 0.16666666666666666,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL1529349W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL17709379W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL6689857W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL1560150W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL20256105W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL40715613W": {
+  "exact": 0.16666666666666666,
+  "semantic": 0.3333333333333333,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL207737W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL28077082W": {
+  "exact": 0.5,
+  "semantic": 0.25,
+  "acceptable": 0.0,
+  "miss": 0.25,
+  "any_level": 0.75,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL36072842W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL284413W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL4763388W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL24186223W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL40643442W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL45731401W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL989158W": {
+  "exact": 0.0,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL40185565W": {
+  "exact": 0.3333333333333333,
+  "semantic": 0.6666666666666666,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL1517938W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL26977922W": {
+  "exact": 0.6,
+  "semantic": 0.4,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL15246297W": {
+  "exact": 0.0,
+  "semantic": 0.3333333333333333,
+  "acceptable": 0.0,
+  "miss": 0.6666666666666666,
+  "any_level": 0.3333333333333333,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL37791479W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL36997893W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL43016143W": {
+  "exact": 0.5,
+  "semantic": 0.25,
+  "acceptable": 0.0,
+  "miss": 0.25,
+  "any_level": 0.75,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL24402922W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL237644W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL35380097W": {
+  "exact": 0.75,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.25,
+  "any_level": 0.75,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL12330860M": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL24518416W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL205463W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL2032340W": {
+  "exact": 0.0,
+  "semantic": 0.6666666666666666,
+  "acceptable": 0.0,
+  "miss": 0.3333333333333333,
+  "any_level": 0.6666666666666666,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL34092245W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL229776W": {
+  "exact": 0.6666666666666666,
+  "semantic": 0.3333333333333333,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL25816870W": {
+  "exact": 0.0,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL7980896W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL20907443W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL238839W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL38194992W": {
+  "exact": 0.5,
+  "semantic": 0.16666666666666666,
+  "acceptable": 0.0,
+  "miss": 0.3333333333333333,
+  "any_level": 0.6666666666666666,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL40785912W": {
+  "exact": 0.0,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL20393697W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.25,
+  "miss": 0.75,
+  "any_level": 0.25,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL550015W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.5,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL4242218W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL20555161W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL1528824W": {
+  "exact": 0.5,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL1103981W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL25654920W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL17862706W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL20344857W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL5175010W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL7539618W": {
+  "exact": 0.0,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL7624834W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL16551048W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL34080144W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL197144W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL1517999W": {
+  "exact": 0.25,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.75,
+  "any_level": 0.25,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL16333415W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL1172110W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL11989773W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL7008553W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL37922512W": {
+  "exact": 0.0,
+  "semantic": 0.5,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL2341547W": {
+  "exact": 0.2,
+  "semantic": 0.0,
+  "acceptable": 0.2,
+  "miss": 0.6,
+  "any_level": 0.4,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL4328737W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL25296585W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL7711833W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL27001012W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL24193578W": {
+  "exact": 0.5,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.5,
+  "any_level": 0.5,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL1794169W": {
+  "exact": 0.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 1.0,
+  "any_level": 0.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL24379345W": {
+  "exact": 1.0,
+  "semantic": 0.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ },
+ "/works/OL63687W": {
+  "exact": 0.0,
+  "semantic": 1.0,
+  "acceptable": 0.0,
+  "miss": 0.0,
+  "any_level": 1.0,
+  "ddc_level": null,
+  "ddc_ok": null
+ }
+}
