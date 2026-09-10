@@ -1,16 +1,30 @@
 #!/usr/bin/env python3
 """
-llm_client.py — OpenAI-compatible LLM client (default: DeepSeek).
+llm_client.py — OpenAI-compatible LLM client with provider selection.
 
-Key resolution order:
-  1. DEEPSEEK_API_KEY environment variable
-  2. phase1/.env  (DEEPSEEK_API_KEY=sk-...)   <- recommended: works regardless
-     of how the command shells are spawned. Keep it chmod 600, never commit.
+Providers are resolved per call so one process can compare models (E3):
+
+  deepseek   (default) DEEPSEEK_API_KEY   api.deepseek.com
+  gemini               GEMINI_API_KEY     generativelanguage.googleapis.com/v1beta/openai/
+  openai_compatible    LLM_API_KEY        LLM_BASE_URL (local vLLM/Ollama, any
+                                          OpenAI-compatible server)
+
+Key resolution order (per provider):
+  1. the provider's key environment variable
+  2. phase1/.env  (chmod 600; never commit)
+
+Model resolution: explicit `model=` argument > provider's *_MODEL env var >
+provider default.
+
+Backward compatibility: existing call sites pass no provider and get the
+DeepSeek behaviour they had before.
 
 Usage:
   from llm_client import chat_json, chat_text
-  txt = chat_text("hello", temperature=0.3)
-  obj = chat_json({"instruction": "..."})
+  obj = chat_json(prompt, system="...")                       # deepseek
+  obj = chat_json(prompt, provider="gemini")                  # Gemini
+  obj = chat_json(prompt, provider="openai_compatible",
+                  model="Qwen/Qwen2.5-7B-Instruct")           # local server
 """
 
 import json
@@ -27,37 +41,75 @@ except ImportError:
 from openai import OpenAI
 
 ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat")
-BASE_URL = os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com")
+
+# provider -> (key env, base-url env, default base url, model env, default model)
+# NOTE: model names drift. Verified 2026-09-05 against the live endpoint:
+#   gemini-3.1-pro-preview  exists (was rate-limited: credits depleted)
+#   gemini-2.5-pro          RETIRED ("no longer available to new users")
+#   gemini-2.5-flash        exists
+# Override per call (model=...) or per environment (GEMINI_MODEL=...).
+PROVIDERS = {
+    "deepseek": ("DEEPSEEK_API_KEY", "DEEPSEEK_BASE_URL",
+                 "https://api.deepseek.com", "DEEPSEEK_MODEL", "deepseek-chat"),
+    "gemini": ("GEMINI_API_KEY", "GEMINI_BASE_URL",
+               "https://generativelanguage.googleapis.com/v1beta/openai/",
+               "GEMINI_MODEL", "gemini-3.1-pro-preview"),
+    "openai_compatible": ("LLM_API_KEY", "LLM_BASE_URL",
+                          "http://localhost:8000/v1", "LLM_MODEL", ""),
+}
+
+DEFAULT_PROVIDER = os.environ.get("LLM_PROVIDER", "deepseek")
+
+# Back-compat module-level names (the DeepSeek defaults the shipped scripts use)
+DEFAULT_MODEL = os.environ.get(PROVIDERS["deepseek"][3],
+                               PROVIDERS["deepseek"][4])
+BASE_URL = os.environ.get(PROVIDERS["deepseek"][1], PROVIDERS["deepseek"][2])
 
 
-def get_key():
+def _provider_spec(provider):
+    if provider not in PROVIDERS:
+        raise ValueError(f"unknown provider {provider!r}; "
+                         f"choose from {sorted(PROVIDERS)}")
+    return PROVIDERS[provider]
+
+
+def get_key(provider=DEFAULT_PROVIDER):
     if load_dotenv is not None:
         load_dotenv(ROOT / ".env")
-    key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
+    key_env = _provider_spec(provider)[0]
+    key = os.environ.get(key_env, "").strip()
     if not key:
         raise RuntimeError(
-            "No DEEPSEEK_API_KEY found. Either:\n"
-            "  export DEEPSEEK_API_KEY=sk-...   (in the environment running the harness)\n"
-            "  or create phase1/.env with:      DEEPSEEK_API_KEY=sk-...  (chmod 600)"
+            f"No {key_env} found for provider {provider!r}. Either:\n"
+            f"  export {key_env}=...      (in the environment running the harness)\n"
+            f"  or add {key_env}=... to phase1/.env   (chmod 600)"
         )
     return key
 
 
-def _client():
-    return OpenAI(api_key=get_key(), base_url=BASE_URL)
+def _client(provider=DEFAULT_PROVIDER):
+    _, base_env, base_default, _, _ = _provider_spec(provider)
+    base = os.environ.get(base_env, base_default)
+    return OpenAI(api_key=get_key(provider), base_url=base)
 
 
-def chat_text(prompt, system=None, temperature=0.3, max_tokens=2048, model=None, retries=3, backoff=2.0):
+def default_model(provider=DEFAULT_PROVIDER):
+    _, _, _, model_env, model_default = _provider_spec(provider)
+    return os.environ.get(model_env, model_default)
+
+
+def chat_text(prompt, system=None, temperature=0.3, max_tokens=2048, model=None,
+              provider=None, retries=3, backoff=2.0):
+    provider = provider or DEFAULT_PROVIDER
     messages = []
     if system:
         messages.append({"role": "system", "content": system})
     messages.append({"role": "user", "content": prompt})
-    client = _client()
+    client = _client(provider)
     for attempt in range(retries):
         try:
             resp = client.chat.completions.create(
-                model=model or DEFAULT_MODEL,
+                model=model or default_model(provider),
                 messages=messages,
                 temperature=temperature,
                 max_tokens=max_tokens,
@@ -70,10 +122,11 @@ def chat_text(prompt, system=None, temperature=0.3, max_tokens=2048, model=None,
     raise RuntimeError("unreachable")
 
 
-def chat_json(prompt, system=None, temperature=0.0, max_tokens=2048, model=None):
+def chat_json(prompt, system=None, temperature=0.0, max_tokens=2048, model=None,
+              provider=None):
     """Ask for a single JSON object; robustly extracts it from the reply."""
     text = chat_text(prompt, system=system, temperature=temperature,
-                     max_tokens=max_tokens, model=model)
+                     max_tokens=max_tokens, model=model, provider=provider)
     try:
         return json.loads(text)
     except json.JSONDecodeError:
@@ -85,6 +138,8 @@ def chat_json(prompt, system=None, temperature=0.0, max_tokens=2048, model=None)
 
 
 if __name__ == "__main__":
-    # smoke test: python3 llm_client.py "say hi in 3 words"
-    out = chat_text(sys.argv[1] if len(sys.argv) > 1 else "Reply with exactly: OK")
+    # smoke test: python3 llm_client.py "say hi in 3 words" [provider]
+    prov = sys.argv[2] if len(sys.argv) > 2 else None
+    out = chat_text(sys.argv[1] if len(sys.argv) > 1 else "Reply with exactly: OK",
+                    provider=prov)
     print(out)

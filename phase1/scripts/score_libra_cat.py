@@ -225,6 +225,9 @@ def main() -> None:
     ap.add_argument("--preds", default=str(ROOT / "data" / "libra_cat_predictions.jsonl"))
     ap.add_argument("--out", default=str(ROOT / "reports" / "libra_cat_eval"))
     ap.add_argument("--no-authority", action="store_true")
+    ap.add_argument("--per-record-out", default="",
+                    help="optional JSON path for per-record scores, used by the "
+                         "E3 multi-cell comparison (run_e3.py) for paired tests")
     args = ap.parse_args()
 
     rows = [json.loads(l) for l in open(args.preds, encoding="utf-8") if l.strip()]
@@ -243,6 +246,7 @@ def main() -> None:
     ddc_levels: Dict[str, int] = {}
     n_gold = n_pred = 0
     recs_any_exact = 0
+    per_record: Dict[str, Dict] = {}
 
     for i, r in enumerate(usable):
         preds = r["pred_subjects"]
@@ -259,14 +263,34 @@ def main() -> None:
                 continue
             bucket = classify_pred_error(p, golds, authority)
             pred_errors[bucket] = pred_errors.get(bucket, 0) + 1
+        ddc_lv = None
         if r["gold_ddc"]:
             lv = score_ddc(r.get("pred_ddc"), r["gold_ddc"])
             ddc_levels[lv] = ddc_levels.get(lv, 0) + 1
+            ddc_lv = lv
+        if args.per_record_out:
+            n = len(levels)
+            per_record[r["work_key"]] = {
+                "exact": levels.count("exact") / n,
+                "semantic": levels.count("semantic") / n,
+                "acceptable": levels.count("acceptable") / n,
+                "miss": levels.count("miss") / n,
+                "any_level": (levels.count("exact") + levels.count("semantic")
+                              + levels.count("acceptable")) / n,
+                "ddc_level": ddc_lv,
+                "ddc_ok": (1.0 if ddc_lv in ("exact", "class3") else 0.0)
+                          if ddc_lv else None,
+            }
         if (i + 1) % 100 == 0:
             logger.info("  scored %d/%d", i + 1, len(usable))
             authority.save()
 
     authority.save()
+
+    if args.per_record_out:
+        Path(args.per_record_out).parent.mkdir(parents=True, exist_ok=True)
+        Path(args.per_record_out).write_text(json.dumps(per_record, indent=1))
+        logger.info("Wrote per-record scores -> %s", args.per_record_out)
 
     n_ddc = sum(ddc_levels.values())
     cum = {}

@@ -44,20 +44,17 @@ on LCSH and DDC separately.
 
 Verified facts from the environment:
 
-| Tier | Model | Endpoint | Key | Status |
+| Tier | Model | Endpoint | Key | Status (verified 2026-09-05) |
 |---|---|---|---|---|
-| Frontier | Gemini 2.5 Pro (or Flash) | OpenAI-compatible `generativelanguage.googleapis.com/v1beta/openai/` | `GEMINI_API_KEY` set | Endpoint reachable; **client work needed** |
-| Mid (baseline) | `deepseek-chat` | `api.deepseek.com` | `DEEPSEEK_API_KEY` set | Shipped results exist (600 records) — the anchor cell |
+| Frontier | `gemini-3.1-pro-preview` (or `gemini-2.5-flash`) | OpenAI-compatible `generativelanguage.googleapis.com/v1beta/openai/` | `GEMINI_API_KEY` set | **Client path verified working** (auth accepted). Two live findings: (i) `gemini-2.5-pro` is RETIRED — use `gemini-3.1-pro-preview`; (ii) the key currently returns 429 "prepayment credits are depleted", so the account must be topped up before this tier can run |
+| Mid (baseline) | `deepseek-chat` | `api.deepseek.com` | `DEEPSEEK_API_KEY` set | Shipped results exist (600 records) — the anchor cell; live call verified |
 | Small/open | Local open-weight (e.g., Qwen2.5-7B / Llama-3.1-8B) **or** `deepseek-reasoner` as fallback | local vLLM/Ollama, or DeepSeek | — | Needs a GPU machine; if unavailable, substitute `deepseek-reasoner` and disclose the substitution |
 
-**Client constraint:** `phase1/scripts/llm_client.py` is DeepSeek-only
-(hardcodes `DEEPSEEK_API_KEY` and `api.deepseek.com`). Two options:
-- **Option A (recommended):** extend `llm_client.py` with a provider
-  abstraction — per-call `api_key`/`base_url`/`model` via env vars
-  (`LLM_API_KEY`, `LLM_BASE_URL`, `LLM_MODEL`) defaulting to the current
-  DeepSeek behavior. ~20 lines; keeps one client.
-- **Option B:** a parallel `gemini_client.py`. Avoids touching the shipped
-  client but forks the logic.
+**Client (IMPLEMENTED — Option A):** `phase1/scripts/llm_client.py` now
+resolves a provider per call (`deepseek` | `gemini` | `openai_compatible`),
+with `model=`/`provider=` arguments and `*_MODEL`/`*_BASE_URL` env overrides;
+existing call sites keep their DeepSeek behaviour unchanged. Verified live:
+DeepSeek call OK; Gemini auth+endpoint OK (billing blocked, see above).
 
 The small/open tier's local model is the honest "open-weight" claim; if no
 GPU is available, disclose the `deepseek-reasoner` substitution rather than
